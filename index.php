@@ -1,7 +1,5 @@
 
-<?php 
-include_once"visual.php";
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +10,24 @@ include_once"visual.php";
 </head>
 <body>
     <header></header>
-    <main></main>
+    <main>
+        
+        <div class="questao">
+            <h1>questao x</h1>
+            <div>
+                <form action="">
+                <ul>
+                    <li></li>
+                    <li>aaa</li>
+                    <li>aaa</li>
+                </ul>
+                </form>
+            </div>
+        </div>
+    </main>
     <footer></footer>
 </body>
 </html>
+<?php 
+include_once"visual.php";
+?>
