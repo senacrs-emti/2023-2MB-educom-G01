@@ -13,21 +13,18 @@
     <main>
         
         <div class="questao">
-            <h1>questao x</h1>
-            <div>
-                <form action="">
-                <ul>
-                    <li></li>
-                    <li>aaa</li>
-                    <li>aaa</li>
-                </ul>
-                </form>
-            </div>
+            <h1>H20 -> <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico">H + O2</h1>
         </div>
-    </main>
-    <footer></footer>
-</body>
-</html>
+        <div>
+            <form action="get">
+                <ul id="conjunto_respostas">
+                    <li class="resposta"><input type='checkbox'><label> opção 1</label></li>
+                    <li class="resposta"><input type='checkbox'><label> opção 2</label></li>
+                    <li class="resposta"><input type='checkbox'><label> opção 3</label></li>
+                </ul>
+            </form>
+        </div>
+
 <?php 
 include_once"visual.php";
 ?>
