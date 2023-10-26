@@ -7,7 +7,23 @@
 </head>
 <body>
     <header></header>
-    <main></main>
-    <footer></footer>
+    <main>
+        
+        <div class="questao">
+            <h1 class= "Teste1">questao x</h1>
+            
+        </div>
+        <div class="">
+                <form action="">
+                <ul>
+                    <input type="checkbox" name="" id=""><label for="">resposta1</label>
+                    <input type="checkbox" name="" id=""><label for="">resposta2</label>
+                    <input type="checkbox" name="" id=""><label for="">resposta3</label>    
+                </ul>
+                <input type="submit">
+                </form>
+            </div>
+    </main>
+    <footer>Teste</footer>
 </body>
 </html>
