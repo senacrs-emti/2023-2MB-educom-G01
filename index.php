@@ -12,20 +12,22 @@
     <header></header>
     <main>
         
-        <div class="questao">
+    <div class="questao">
             <h1 class= "Teste1">questao x</h1>
-            <div>
+            
+        </div>
+        <div class="">
                 <form action="">
                 <ul>
-                    <li></li>
-                    <li>aaa</li>
-                    <li>aaa</li>
+                    <input type="checkbox" name="" id=""><label for="">resposta1</label>
+                    <input type="checkbox" name="" id=""><label for="">resposta2</label>
+                    <input type="checkbox" name="" id=""><label for="">resposta3</label>    
                 </ul>
+                <input type="submit">
                 </form>
             </div>
-        </div>
     </main>
-    <footer>Teste</footer>
+    <footer></footer>
 </body>
 </html>
 <?php 
