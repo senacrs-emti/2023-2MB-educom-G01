@@ -5,3 +5,8 @@ function aumentarAtomos(){
     ctx.clear()
     ctx.draw()
 }
+class Atomo{
+    constructor(){
+        
+    }
+}
