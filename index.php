@@ -13,7 +13,7 @@
     <main>
         
         <div class="questao">
-            <h1>H20 -> <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='10'>H + O2</h1>
+            <h1><input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>H20 -> <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>H + <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>O2</h1>
         </div>
         <div>
             <form action="get">
@@ -22,6 +22,8 @@
                     <li class="resposta"><input type='checkbox'><label> opção 2</label></li>
                     <li class="resposta"><input type='checkbox'><label> opção 3</label></li>
                 </ul>
+                <input type="submit" value="Enviar" id='Enviar' href="">
+                
             </form>
         </div>
 
