@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `questoes` (
   `id` int(11) NOT NULL,
   `Pontos` varchar(45) NOT NULL,
-  `Respotas_id` int(11) NOT NULL
+  `Respostas_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `questoes` (
 CREATE TABLE `responde` (
   `id` int(11) NOT NULL,
   `Questoes_id` int(11) NOT NULL,
-  `Respotas_id` int(11) NOT NULL
+  `Respostas_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -53,8 +53,9 @@ CREATE TABLE `responde` (
 
 CREATE TABLE `respostas` (
   `id` int(11) NOT NULL,
-  `Resposta certa` varchar(45) DEFAULT NULL,
-  `Resposta errada` varchar(45) DEFAULT NULL
+  `Resposta_Certa` varchar(45) DEFAULT NULL,
+  `Resposta_Errada` varchar(45) DEFAULT NULL,
+  `Resposta_Errada2` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -80,14 +81,14 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `questoes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Questões_Respotas1` (`Respotas_id`);
+  ADD KEY `fk_Questoes_Respotas1` (`Respotas_id`);
 
 --
 -- Índices para tabela `responde`
 --
 ALTER TABLE `responde`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Responde_Questões1` (`Questoes_id`),
+  ADD KEY `fk_Responde_Questoes1` (`Questoes_id`),
   ADD KEY `fk_Responde_Respotas1` (`Respotas_id`);
 
 --
@@ -101,7 +102,7 @@ ALTER TABLE `respostas`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
-  ADD KEY `fk_Usuário_Responde1` (`Responde_id`);
+  ADD KEY `fk_Usuario_Responde1` (`Responde_id`);
 
 --
 -- Restrições para despejos de tabelas
@@ -111,20 +112,20 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `questoes`
 --
 ALTER TABLE `questoes`
-  ADD CONSTRAINT `fk_Questões_Respotas1` FOREIGN KEY (`Respotas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Questoes_Respotas1` FOREIGN KEY (`Respotas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `responde`
 --
 ALTER TABLE `responde`
-  ADD CONSTRAINT `fk_Responde_Questões1` FOREIGN KEY (`Questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Responde_Questoes1` FOREIGN KEY (`Questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Responde_Respotas1` FOREIGN KEY (`Respotas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_Usuário_Responde1` FOREIGN KEY (`Responde_id`) REFERENCES `responde` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Usuario_Responde1` FOREIGN KEY (`Responde_id`) REFERENCES `responde` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
