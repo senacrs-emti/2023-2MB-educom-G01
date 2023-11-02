@@ -53,9 +53,9 @@ CREATE TABLE `responde` (
 
 CREATE TABLE `respostas` (
   `id` int(11) NOT NULL,
-  `Resposta_Certa` varchar(45) DEFAULT NULL,
-  `Resposta_Errada` varchar(45) DEFAULT NULL,
-  `Resposta_Errada2` varchar(45) DEFAULT NULL
+  `RespostaCerta` varchar(45) DEFAULT NULL,
+  `RespostaErrada` varchar(45) DEFAULT NULL,
+  `RespostaErrada2` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
