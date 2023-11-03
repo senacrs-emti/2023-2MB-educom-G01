@@ -38,7 +38,7 @@ CREATE TABLE `questoes` (
 -- Extraindo dados da tabela `questoes`
 --
 
-INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respotas_id`) VALUES
+INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respostas_id`) VALUES
 (101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201);
 
 -- --------------------------------------------------------
@@ -97,15 +97,15 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `questoes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Questões_Respotas1` (`Respotas_id`);
+  ADD KEY `fk_Questoes_Respostas1` (`Respostas_id`);
 
 --
 -- Índices para tabela `responde`
 --
 ALTER TABLE `responde`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Responde_Questões1` (`Questoes_id`),
-  ADD KEY `fk_Responde_Respotas1` (`Respotas_id`);
+  ADD KEY `fk_Responde_Questoes1` (`Questoes_id`),
+  ADD KEY `fk_Responde_Respostas1` (`Respostas_id`);
 
 --
 -- Índices para tabela `respostas`
@@ -118,7 +118,7 @@ ALTER TABLE `respostas`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
-  ADD KEY `fk_Usuário_Responde1` (`Responde_id`);
+  ADD KEY `fk_Usuario_Responde1` (`Responde_id`);
 
 --
 -- Restrições para despejos de tabelas
@@ -128,15 +128,15 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `questoes`
 --
 ALTER TABLE `questoes`
-  ADD CONSTRAINT `fk_Questoes_Respotas1` FOREIGN KEY (`Respotas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Questões_Respotas1` FOREIGN KEY (`Respotas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Questoes_Respostas1` FOREIGN KEY (`Respostas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Questoes_Respostas1` FOREIGN KEY (`Respostas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `responde`
 --
 ALTER TABLE `responde`
-  ADD CONSTRAINT `fk_Responde_Questões1` FOREIGN KEY (`Questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Responde_Respotas1` FOREIGN KEY (`Respotas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Responde_Questoes1` FOREIGN KEY (`Questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Responde_Respotas1` FOREIGN KEY (`Respostas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `usuario`
