@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `questoes` (
   `id` int(11) NOT NULL,
-  `Pontos` varchar(45) NOT NULL,
+  `Pontos` int(11) NOT NULL,
   `equacao` varchar(45) NOT NULL,
   `Respostas_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -39,7 +39,7 @@ CREATE TABLE `questoes` (
 --
 
 INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respotas_id`) VALUES
-(101, '100', 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 1);
+(101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201);
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,7 @@ INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respotas_id`) VALUES
 CREATE TABLE `responde` (
   `id` int(11) NOT NULL,
   `Questoes_id` int(11) NOT NULL,
-  `Respotas_id` int(11) NOT NULL
+  `Respostas_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -62,15 +62,16 @@ CREATE TABLE `responde` (
 CREATE TABLE `respostas` (
   `id` int(11) NOT NULL DEFAULT 0,
   `RespostaCerta` varchar(45) DEFAULT NULL,
-  `RespostaErrada` varchar(45) DEFAULT NULL
+  `RespostaErrada` varchar(45) DEFAULT NULL,
+  `RespostaErrada2` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `respostas`
 --
 
-INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`) VALUES
-(1, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)');
+INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrada2`) VALUES
+(201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)',' K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)');
 
 -- --------------------------------------------------------
 
