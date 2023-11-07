@@ -8,12 +8,16 @@ main{
     align-items: center;
     justify-content: center;
     padding-bottom: 5%;
+    background-color: #ffffeb;
+   
 }
 .atomos{
     height: 500px;
     width: 40%;
     border:solid 1px black;
     margin-left: 5px;
+    background-color: whitesmoke;
+    
 }
 .questao{
     height: 100px;
@@ -30,6 +34,8 @@ li{
     list-style-type: none;
     width: 150px;
     height: 20px;
+    background-color: whitesmoke;
+    color: black;
 }
 #conjunto_respostas{
     display: flex;
@@ -47,7 +53,10 @@ li{
     font-size: 20px;
 }
 #Enviar{
-    margin-left: 80vh;
+    margin-left: 40%;
+    margin-top: 5%;
     width: 10vw;
     height: 5vh;
+    background-color: #006400;
+    color: white;
 }
