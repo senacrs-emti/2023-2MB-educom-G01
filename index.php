@@ -13,7 +13,7 @@
     <main>
         
         <div class="questao">
-            <h1><input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>H20 -> <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>H + <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>O2</h1>
+            <h1><input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>H20 ->  <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>H + <input type="number" onchange="aumentarAtomos()" id="NumeroAtomico" min='0'>O2</h1>
         </div>
         <div>
             <form action="get">

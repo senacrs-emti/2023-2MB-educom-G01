@@ -8,5 +8,5 @@
     <footer></footer>
 </body>
 </html>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 

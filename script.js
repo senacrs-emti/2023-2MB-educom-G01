@@ -1,5 +1,10 @@
-var canvas = document.getElementsByClassName('atomos');
-var ctx = canvas.getContext('2d');
+const canvas = document.getElementById("myCanvas");
+context = canvas.getContext("2d");
+
+
+const number = document.getElementById("NumeroAtomico")
+console.log(number)
+
 function aumentarAtomos(){
     const number = document.getElementById("NumeroAtomico")
     ctx.clear()
