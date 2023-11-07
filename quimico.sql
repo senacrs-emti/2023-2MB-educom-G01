@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Out-2023 às 16:21
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 7.4.33
+-- Tempo de geração: 07-Nov-2023 às 16:22
+-- Versão do servidor: 10.4.17-MariaDB
+-- versão do PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,14 +32,15 @@ CREATE TABLE `questoes` (
   `Pontos` int(11) NOT NULL,
   `equacao` varchar(45) NOT NULL,
   `Respostas_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `questoes`
 --
 
 INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respostas_id`) VALUES
-(101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201);
+(101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201),
+(103, 100, ' KMnO4(aq) + FeCl2(aq) + HCl(aq) →  MnCl2(aq)', 203);
 
 -- --------------------------------------------------------
 
@@ -51,7 +52,7 @@ CREATE TABLE `responde` (
   `id` int(11) NOT NULL,
   `Questoes_id` int(11) NOT NULL,
   `Respostas_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -64,14 +65,15 @@ CREATE TABLE `respostas` (
   `RespostaCerta` varchar(45) DEFAULT NULL,
   `RespostaErrada` varchar(45) DEFAULT NULL,
   `RespostaErrada2` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `respostas`
 --
 
 INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrada2`) VALUES
-(201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)',' K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)');
+(201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)', ' K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)'),
+(203, '1 KMnO4(aq) + 5 FeCl2(aq) + 8 HCl(aq) → 1 MnC', '2 KMnO4(aq) + 3 FeCl2(aq) + 2 HCl(aq) → 4 MnC', '1 KMnO4(aq) + 3 FeCl2(aq) + 3 HCl(aq) → 2 MnC');
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,7 @@ CREATE TABLE `usuario` (
   `Tempo` time NOT NULL,
   `Responde_id` int(11) NOT NULL,
   `Email` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Índices para tabelas despejadas
@@ -125,25 +127,11 @@ ALTER TABLE `usuario`
 --
 
 --
--- Limitadores para a tabela `questoes`
---
-ALTER TABLE `questoes`
-  ADD CONSTRAINT `fk_Questoes_Respostas1` FOREIGN KEY (`Respostas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Questoes_Respostas1` FOREIGN KEY (`Respostas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Limitadores para a tabela `responde`
 --
 ALTER TABLE `responde`
   ADD CONSTRAINT `fk_Responde_Questoes1` FOREIGN KEY (`Questoes_id`) REFERENCES `questoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Responde_Respostas1` FOREIGN KEY (`Respostas_id`) REFERENCES `respostas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_Usuario_Responde1` FOREIGN KEY (`Responde_id`) REFERENCES `responde` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Usuario_Responde1` FOREIGN KEY (`Responde_id`) REFERENCES `responde` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
