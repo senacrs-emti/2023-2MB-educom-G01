@@ -8,12 +8,14 @@ main{
     align-items: center;
     justify-content: center;
     padding-bottom: 5%;
+    background-color: white;
 }
 .atomos{
     height: 500px;
     width: 40%;
     border:solid 1px black;
     margin-left: 5px;
+    background-color: whitesmoke;
 }
 .questao{
     height: 100px;
@@ -22,6 +24,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 li{
     margin-left: 30px;
@@ -45,9 +48,11 @@ li{
     width: 2.5vw;
     height: 5vh;
     font-size: 20px;
+    
 }
 #Enviar{
     margin-left: 80vh;
     width: 10vw;
     height: 5vh;
+    background-color: gray;
 }
