@@ -8,14 +8,14 @@ main{
     align-items: center;
     justify-content: center;
     padding-bottom: 5%;
-    background-color: #ffffeb;
+    background-color: whitesmoke;
 }
 .atomos{
     height: 500px;
     width: 40%;
     border:solid 1px black;
     margin-left: 5px;
-    background-color: whitesmoke;
+    background-color:#D3D3D3;
 }
 .questao{
     height: 100px;
@@ -39,6 +39,7 @@ li{
 #conjunto_respostas{
     display: flex;
     margin-top: 5%;
+    margin-left: 6%;
 }
 #representacao{
     margin-top: 5%;
