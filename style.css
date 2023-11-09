@@ -15,5 +15,10 @@ margin-left: 5px;
     margin-left: 250px; 
 }
 li{
+    margin-left: 90px;
+    
+}
+
+.envia input[type="submit"]{
     margin-left: 30px;
 }
