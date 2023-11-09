@@ -26,6 +26,11 @@
             </form>
         </div>
 
+     
+    </main>
+    <footer></footer>
+</body>
+</html>
 <?php 
 include_once"visual.php";
 ?>
