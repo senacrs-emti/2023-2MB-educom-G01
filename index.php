@@ -12,19 +12,20 @@
     <header></header>
     <main>
         
-        <div class="questao">
-            <h1>questao x</h1>
-            <div>
+    <div class="questao">
+            <h1 class= "Teste1">questao x</h1>
+            
+        </div>
+        <div class="">
                 <form action="">
                 <ul>
-                    <li>aaa</li>
-                    <li>aaa</li>
-                    <li>aaa</li>
+                    <input type="checkbox" name="" id=""><label for="">resposta1</label>
+                    <input type="checkbox" name="" id=""><label for="">resposta2</label>
+                    <input type="checkbox" name="" id=""><label for="">resposta3</label>    
                 </ul>
-                <input class="envia" type="submit">
+                <input type="submit">
                 </form>
             </div>
-        </div>
     </main>
     <footer></footer>
 </body>
