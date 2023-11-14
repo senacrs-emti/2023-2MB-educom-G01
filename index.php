@@ -1,6 +1,3 @@
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +9,7 @@
     <header></header>
     <main>
         <div class="questao">
-            <h1><input type="number" id="NumeroAtomico" name="NumeroAtomico" min='1' value="1">H20 ->  <input type="number" id="NumeroAtomico" min='1' value="1">H + <input type="number" id="NumeroAtomico" min='0'>O2</h1>
+            <h1><input type="number" id="NumeroDeAtomos1" name="NumeroDeAtomos1" min='1' value="1">H20 ->  <input type="number" id="NumeroDeAtomos2" name="NumeroDeAtomos2" min='1' value="1">H + <input type="number" id="NumeroDeAtomos3" name="NumeroDeAtomos3" min='0'>O2</h1>
         </div>
         <div>
             <form action="get">
@@ -26,11 +23,6 @@
             </form>
         </div>
 
-     
-    </main>
-    <footer></footer>
-</body>
-</html>
 <?php 
 include_once"visual.php";
 ?>
