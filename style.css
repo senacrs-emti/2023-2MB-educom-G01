@@ -2,20 +2,24 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: rgb(190, 183, 183);
+}
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-bottom: 5%;
-    background-color: whitesmoke;
+    
 }
+
 .atomos{
     height: 500px;
     width: 40%;
     border:solid 1px black;
     margin-left: 5px;
-    background-color:#D3D3D3;
+    background-color:#49d21b;
 }
 .questao{
     height: 100px;
@@ -24,27 +28,27 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 li{
     margin-left: 30px;
 }
 .resposta{
     list-style-type: none;
-    width: 150px;
-    height: 20px;
-    background-color: whitesmoke;
+    background-color: blue;
     color: black;
 }
-#conjunto_respostas{
-    display: flex;
-    margin-top: 5%;
-    margin-left: 6%;
+
+.alternativas{
+    
+    margin-top: 1%;
+
 }
 #representacao{
     margin-top: 5%;
     display: flex;
     justify-content: center;
-
 }
+#Enviar{
+    width: 100%;
+    height: 30px;
 }
