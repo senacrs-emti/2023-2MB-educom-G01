@@ -11,7 +11,7 @@
 
 
         <div class="questao">
-            <h1><input type="number" id="NumeroAtomico" name="NumeroDeAtomos1" min='1' value="1">H20 ->  <input type="number" id="NumeroDeAtomos2" name="NumeroDeAtomos2" min='1' value="1">H + <input type="number" id="NumeroDeAtomos3" name="NumeroDeAtomos3" min='0'>O2</h1>
+            <h1><input type="number" id="NumeroAtomico1" name="NumeroAtomico1" min='1' value="1">H20 ->  <input type="number" id="NumeroAtomico2" name="NumeroAtomico2" min='1' value="1">H + <input type="number" id="NumeroAtomico3" name="NumeroAtomico3" min='0'>O2</h1>
         </div>
         <div class="alternativas">
         <div>
