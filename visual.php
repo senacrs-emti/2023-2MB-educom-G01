@@ -1,7 +1,10 @@
-    <div id="representacao">
-            <canvas class="atomos"></canvas>
-            <canvas class="atomos"></canvas>
-    </div>
+
+<div id="representacao">
+    <canvas class="atomos" id="canvas1"></canvas>
+    <canvas class="atomos" id="canvas2"></canvas>
+    <canvas class="atomos" id="canvas3"></canvas>
+</div>
+
     <form action="">  
     </form>
 </main>
