@@ -1,7 +1,6 @@
 <?php
 // conexao com o banco de dados
 $conexao = mysqli_connect('localhost','root','','aula');
-include_once"visual.php";
 ?>
 <html lang="en">
 <head>
@@ -47,3 +46,6 @@ include_once"visual.php";
                 
             </form>
         </div>
+<?php
+include_once"visual.php";
+?>
