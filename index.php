@@ -46,7 +46,6 @@ $conexao = mysqli_connect('localhost','root','','quimico');
                 
             </form>
         </div>
-
 <?php
 include_once"visual.php";
 ?>
