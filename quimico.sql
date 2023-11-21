@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Nov-2023 às 16:16
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 7.3.27
+-- Tempo de geração: 21-Nov-2023 às 21:56
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,24 +32,24 @@ CREATE TABLE `questoes` (
   `Pontos` int(11) NOT NULL,
   `equacao` varchar(45) NOT NULL,
   `Respostas_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `questoes`
 --
 
 INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respostas_id`) VALUES
-(101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201),
-(103, 100, ' KMnO4(aq) + FeCl2(aq) + HCl(aq) →  MnCl2(aq)', 203),
-(104, 100, 'Ca(OH)2 + H3PO4 → Ca3(PO4)2 + H2O', 204),
-(105, 100, 'NO2 - H + CO(NH2)2 → N2 + CO2 + H2O', 205),
-(106, 100, 'Cu + HNO3 → Cu(NO3)2 + NO2 + H2O', 206),
-(107, 100, 'K2Cr2O7 + HCl → CrCl3 + KCl + H2O + Cl2', 207),
-(108, 100, 'Na2CO3 + HCl → NaCl + CO2 + H2O', 208),
-(109, 100, 'C3H8 + O2 → CO2 + H2O', 209),
-(110, 100, 'Na2SO4 + BaCl2 → BaSO4 + NaCl', 210),
-(111, 100, 'Fe2O3 + H2 → Fe + H2O', 211),
-(112, 100, 'C2H5OH + O2 → CO2 + H2O', 212);
+(101, 100, 'K2Cr2O7(aq)+ H2O(l)+ S(g)→ KOH(aq)+ Cr2O3', 201),
+(103, 100, 'KMnO4(aq)+ FeCl2(aq)+ HCl(aq)→  MnCl2(aq)', 203),
+(104, 100, 'Ca(OH)2+ H3PO4→ Ca3(PO4)2+ H2O', 204),
+(105, 100, 'NO2- H+ CO(NH2)2→ N2+ CO2+ H2O', 205),
+(106, 100, 'Cu+ HNO3→ Cu(NO3)2+ NO2+ H2O', 206),
+(107, 100, 'K2Cr2O7+ HCl→ CrCl3+ KCl+ H2O+ Cl2', 207),
+(108, 100, 'Na2CO3+ HCl→ NaCl+ CO2+ H2O', 208),
+(109, 100, 'C3H8+ O2→ CO2+ H2O', 209),
+(110, 100, 'Na2SO4+ BaCl2→ BaSO4+ NaCl', 210),
+(111, 100, 'Fe2O3+ H2→ Fe+ H2O', 211),
+(112, 100, 'C2H5OH+ O2→ CO2+ H2O', 212);
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `responde` (
   `id` int(11) NOT NULL,
   `Questoes_id` int(11) NOT NULL,
   `Respostas_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `responde`
@@ -85,14 +85,14 @@ CREATE TABLE `respostas` (
   `RespostaCerta` varchar(45) DEFAULT NULL,
   `RespostaErrada` varchar(45) DEFAULT NULL,
   `RespostaErrada2` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `respostas`
 --
 
 INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrada2`) VALUES
-(201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)', ' K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)'),
+(201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)', 'K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)'),
 (203, '1 KMnO4(aq) + 5 FeCl2(aq) + 8 HCl(aq) → 1 MnC', '2 KMnO4(aq) + 3 FeCl2(aq) + 2 HCl(aq) → 4 MnC', '1 KMnO4(aq) + 3 FeCl2(aq) + 3 HCl(aq) → 2 MnC'),
 (204, '3 Ca(OH)2 + 2 H3PO4 → 1 Ca3(PO4)2 + 6 H2O', '2 Ca(OH)2 + 3 H3PO4 → 2 Ca3(PO4)2 + 4 H2O', '4 Ca(OH)2 + 2 H3PO4 → 3 Ca3(PO4)2 + 6 H2O'),
 (205, '1 CO(NH2)2 + 2 NO2- + 2 H+ → 2 N2 + 1 CO2 + 3', '2 CO(NH2)2 + 3 NO2- + 1 H+ → 2 N2 + 2 CO2 + 2', '3 CO(NH2)2 + 1 NO2- + 2 H+ → 2 N2 + 3 CO2 + 2'),
@@ -118,7 +118,7 @@ CREATE TABLE `usuario` (
   `Tempo` time NOT NULL,
   `Responde_id` int(11) NOT NULL,
   `Email` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Índices para tabelas despejadas
