@@ -1,40 +1,45 @@
-const canvas1 = document.getElementById('canvas1');
-const ctx1 = canvas1.getContext('2d');
+function desenharMoleculas(equacao, canvasReagentes, canvasProdutos) {
+  // Separa a equação em reagentes e produtos
+  const reagentes = equacao.split("->")[0].split(" ");
+  const produtos = equacao.split("->")[1].split(" ");
 
-const canvas2 = document.getElementById('canvas2');
-const ctx2 = canvas2.getContext('2d');
+  // Itera sobre os reagentes
+  reagentes.forEach((reagente, i) => {
+    // Obtém o número de moléculas do reagente
+    const numeroMoleculas = document.getElementById(`reagente-${i + 1}`).value;
 
-const canvas3 = document.getElementById('canvas3');
-const ctx3 = canvas3.getContext('2d');
+    // Desenha as moléculas do reagente
+    for (let j = 0; j < numeroMoleculas; j++) {
+      desenharMolecula(reagente, canvasReagentes);
+    }
+  });
 
-let NumeroAtomos1 = document.getElementById('NumeroAtomico1').value;
-let NumeroAtomos2 = document.getElementById('NumeroAtomico2').value;
-let NumeroAtomos3 = document.getElementById('NumeroAtomico3').value;
+  // Itera sobre os produtos
+  produtos.forEach((produto, i) => {
+    // Obtém o número de moléculas do produto
+    const numeroMoleculas = document.getElementById(`produto-${i + 1}`).value;
 
-document.getElementById('NumeroAtomico1').addEventListener('change', function () {
-  // Limpa o canvas
-  ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-  NumeroAtomos1 = this.value;
-  CriarAtomo(NumeroAtomos1, ctx1);
-});
+    // Desenha as moléculas do produto
+    for (let j = 0; j < numeroMoleculas; j++) {
+      desenharMolecula(produto, canvasProdutos);
+    }
+  });
+}
 
-document.getElementById('NumeroAtomico2').addEventListener('change', function () {
-  ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-  NumeroAtomos2 = this.value;
-  CriarAtomo(NumeroAtomos2, ctx2);
-});
+function desenharMolecula(molecula, canvas) {
+  // Obtém o elemento da molécula
+  const elemento = molecula.split(" ")[0];
 
-document.getElementById('NumeroAtomico3').addEventListener('change', function () {
-  ctx3.clearRect(0, 0, canvas3.width, canvas3.height);
-  NumeroAtomos3 = this.value;
-  CriarAtomo(NumeroAtomos3, ctx3);
-});
+  // Obtém o número de átomos do elemento
+  const numeroAtomos = molecula.split(" ")[1];
 
-function CriarAtomo(NumeroAtomos, ctx) {
-  for (let i = 0; i < NumeroAtomos; i++) {
-    ctx.beginPath();
-    ctx.arc(Math.random() * ctx.canvas.width, Math.random() * ctx.canvas.height, 5, 0, 2 * Math.PI);
-    ctx.fillStyle = 'red';
-    ctx.fill();
+  // Desenha os átomos da molécula
+  for (let i = 0; i < numeroAtomos; i++) {
+    const x = Math.floor(Math.random() * canvas.width);
+    const y = Math.floor(Math.random() * canvas.height);
+    canvas.getContext("2d").beginPath();
+    canvas.getContext("2d").fillStyle = `#${elemento}`;
+    canvas.getContext("2d").arc(x, y, 10, 0, 2 * Math.PI);
+    canvas.getContext("2d").fill();
   }
 }

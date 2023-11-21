@@ -16,8 +16,9 @@ include_once"functions.php";
 <body>
     <header></header>
     <main>
-        <div>
-          <h1><?php // Procura e seleciona as questões
+
+        <div class="questao">
+        <h1><?php // Procura e seleciona as questões
               $sql = "SELECT * FROM questoes";
               $resultado = mysqli_query($conexao, $sql);
 
@@ -31,10 +32,6 @@ include_once"functions.php";
               
               echo adicionarInput($questao['equacao']); ?>
           </h1>
-        </div>
-
-        <div class="questao">
-            <h1><input type="number" id="NumeroAtomico1" name="NumeroAtomico1" min='1' value="1">H20 ->  <input type="number" id="NumeroAtomico2" name="NumeroAtomico2" min='1' value="1">H + <input type="number" id="NumeroAtomico3" name="NumeroAtomico3" min='0'>O2</h1>
         </div>
         <div class="alternativas">
         <div>
