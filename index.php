@@ -29,7 +29,7 @@ include_once"functions.php";
               $questao = $questoes[$indice_aleatorio];
               // Escreve a questão 
               
-              echo adicionar_1_antes_de_cada_palavra($questao['equacao']); ?>
+              echo adicionarInput($questao['equacao']); ?>
           </h1>
         </div>
 
