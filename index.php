@@ -1,6 +1,8 @@
 <?php
 // conexao com o banco de dados
-$conexao = mysqli_connect('localhost','root','','quimico')
+$conexao = mysqli_connect('localhost','root','','quimico');
+
+include_once"functions.php";
 ?>
 
 
@@ -26,7 +28,8 @@ $conexao = mysqli_connect('localhost','root','','quimico')
               $indice_aleatorio = array_rand($questoes);
               $questao = $questoes[$indice_aleatorio];
               // Escreve a questão 
-              echo $questao['equacao']; ?>
+              
+              echo adicionar_1_antes_de_cada_palavra($questao['equacao']); ?>
           </h1>
         </div>
 
@@ -64,4 +67,5 @@ $conexao = mysqli_connect('localhost','root','','quimico')
         </div>
 <?php
 include_once"visual.php";
+
 ?>
