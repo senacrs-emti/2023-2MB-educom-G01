@@ -21,82 +21,33 @@ include_once "functions.php";
 
     <div class="questao">
       <h1><?php // Procura e seleciona as questões
-          $sql = "SELECT * FROM questoes";
+          $sql = "SELECT * FROM questoes inner join respostas on questoes.Respostas_id=respostas.id ORDER BY RAND() LIMIT 1";
           $resultado = mysqli_query($conexao, $sql);
 
           // guarda as questões
           $questoes = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 
-          // Escolhe uma questão aleatoriamente
-          $indice_aleatorio = array_rand($questoes);
-          $questao = $questoes[$indice_aleatorio];
+          
+          
           // Escreve a questão 
 
-          echo adicionarInput($questao['equacao']); ?>
+          echo adicionarInput($questoes[0]['equacao']); ?>
       </h1>
     </div>
-    <div class="alternativas">
-      <div>
-        <form action="get">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-            <?php // Procura e seleciona as questões
-          $sql = "SELECT * FROM respostas";
-          $respostas = mysqli_query($conexao, $sql);
-
-          $respostas = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
-
-
-          
-
-          $indice_aleatorio = array_rand($questoes);
-          $questao = $questoes[$indice_aleatorio]; ?>
-
-            </label>
-            <div>
-              <form action="get">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    opção 2
-                  </label>
-                </div>
-                <div>
-                  <form action="get">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        opção 3
-                      </label>
-                    </div>
-                </div>
         <div class="alternativas">
         <div>
             <form action="get">
             <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
-    <?php // Procura e seleciona as respostas
-              $sql = "SELECT * FROM respostas";
-              $opcao = mysqli_query($conexao, $sql);
-
-              // 
-              $escolheResposta = mysqli_fetch_all($opcao, MYSQLI_ASSOC);
-
-              // Escolhe uma resposta aleatoriamente
-              $indice_aleatorio = array_rand($escolheResposta);
-              $escolheResposta = $escolheResposta[$indice_aleatorio];
-              // Escreve a resposta 
-              
-              echo($escolheResposta['RespostaCerta']); ?>
+    <?php     echo($questoes[0]['RespostaCerta']); ?>
   </label>
 <div>
             <form action="get">
             <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
-    opção 2
+  <?php     echo($questoes[0]['RespostaErrada']); ?>
   </label>
 </div>
 <div>
@@ -104,7 +55,7 @@ include_once "functions.php";
             <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
-    opção 3
+  <?php     echo($questoes[0]['RespostaErrada2']); ?>
   </label>
 </div>
 </div>
