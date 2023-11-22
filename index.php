@@ -39,7 +39,19 @@ include_once"functions.php";
             <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
-    opção 1
+    <?php // Procura e seleciona as respostas
+              $sql = "SELECT * FROM respostas";
+              $opcao = mysqli_query($conexao, $sql);
+
+              // 
+              $escolheResposta = mysqli_fetch_all($opcao, MYSQLI_ASSOC);
+
+              // Escolhe uma resposta aleatoriamente
+              $indice_aleatorio = array_rand($escolheResposta);
+              $escolheResposta = $escolheResposta[$indice_aleatorio];
+              // Escreve a resposta 
+              
+              echo($escolheResposta['RespostaCerta']); ?>
   </label>
 <div>
             <form action="get">
