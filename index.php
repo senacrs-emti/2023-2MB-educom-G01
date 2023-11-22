@@ -60,10 +60,33 @@ include_once "functions.php";
                       </label>
                     </div>
                 </div>
-                <input type="submit" value="Enviar" id='Enviar' href="#">
-
-              </form>
-            </div>
-            <?php
+        <div class="alternativas">
+        <div>
+            <form action="get">
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    opção 1
+  </label>
+<div>
+            <form action="get">
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    opção 2
+  </label>
+</div>
+<div>
+            <form action="get">
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    opção 3
+  </label>
+</div>
+</div>
+<input type="submit" value="Enviar" id='Enviar' href="#">
+</form></div>
+         <?php
             include_once "visual.php";
             ?>
