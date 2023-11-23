@@ -43,7 +43,6 @@ include_once "functions.php";
     <?php     echo($questoes[0]['RespostaCerta']); ?>
   </label>
 <div>
-            <form action="get">
             <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
@@ -51,7 +50,6 @@ include_once "functions.php";
   </label>
 </div>
 <div>
-            <form action="get">
             <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
