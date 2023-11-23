@@ -14,7 +14,11 @@ main{
     padding-bottom: 5%;
     
 }
+.casa{
+    display: flex;
+    text-align: center;
 
+}
 .atomos{
     height: 500px;
     width: 20%;
@@ -63,7 +67,8 @@ li{
 #Enviar{
     width: 10%;
     height: 30px;
-    margin-left: 45%;
+    margin-left: 30%;
+    margin-top: 10px;
     background-color: green;
     color: white;
     box-shadow: 1px 1px rgb(0, 0, 0);
