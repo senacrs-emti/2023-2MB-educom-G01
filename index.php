@@ -30,6 +30,7 @@ include_once "functions.php";
           // Escreve a questão 
           echo adicionarInput($questoes[0]['equacao']); ?>
       </h1>
+      <button id="botao">aa</button>
     </div>
         <div class="alternativas">
         <div>
