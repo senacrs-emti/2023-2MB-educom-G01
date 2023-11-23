@@ -27,10 +27,7 @@ include_once "functions.php";
           // guarda as questões
           $questoes = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 
-          
-          
           // Escreve a questão 
-
           echo adicionarInput($questoes[0]['equacao']); ?>
       </h1>
     </div>
@@ -61,6 +58,6 @@ include_once "functions.php";
 </div>
 <input type="submit" value="Enviar" id='Enviar' href="#">
 </form></div>
-         <?php
-            include_once "visual.php";
-            ?>
+<?php
+  include_once "visual.php";
+?>
