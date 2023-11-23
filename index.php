@@ -30,35 +30,41 @@ include_once "functions.php";
           
           
           // Escreve a questão 
-
           echo adicionarInput($questoes[0]['equacao']); ?>
       </h1>
     </div>
         <div class="alternativas">
         <div>
-            <form action="get">
+            <form action="post" action="">
+            <?php
+            $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
+            array_rand($opcoes);
+            //echo '<pre>';
+            //print_r($opcoes);
+            //echo '</pre>';
+            ?>
+
+              
+            <?php
+            $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
+            foreach ($opcoes as $value){
+            ?>
             <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    <?php     echo($questoes[0]['RespostaCerta']); ?>
-  </label>
-<div>
-            <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-  <?php     echo($questoes[0]['RespostaErrada']); ?>
-  </label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                <?php echo "$value <br>";?>
+                </label>
+              <div>
+            <?php  
+            }
+            ?>
+
+
+            
+  
+            <input type="submit" value="Enviar" id='Enviar' href="#">
+            </form>
 </div>
-<div>
-            <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-  <?php     echo($questoes[0]['RespostaErrada2']); ?>
-  </label>
-</div>
-</div>
-<input type="submit" value="Enviar" id='Enviar' href="#">
-</form></div>
          <?php
             include_once "visual.php";
             ?>
