@@ -7,6 +7,6 @@
     </form>
 </main>
     <footer></footer>
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

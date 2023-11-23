@@ -9,7 +9,7 @@ function adicionarInput($string) {
   
   foreach ($palavras as $palavra) {
 
-    $resultado .= "<input type='number' class='$classe' id='Atomo-$id_atual'> " . $palavra;
+    $resultado .= "<input type='number' class='$classe' id='Atomo-$id_atual' onchange='desenharCirculosAleatorios()'> " . $palavra;
     $id_atual++;
 
     //procura a posição da seta
