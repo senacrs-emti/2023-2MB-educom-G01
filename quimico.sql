@@ -40,9 +40,9 @@ CREATE TABLE `questoes` (
 
 INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respostas_id`) VALUES
 (101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201),
-(103, 100, ' KMnO4(aq) + FeCl2(aq) + HCl(aq) →  MnCl2(aq)', 203),
+(103, 100, 'KMnO4(aq) + FeCl2(aq) + HCl(aq) →  MnCl2(aq)', 203),
 (104, 100, 'Ca(OH)2 + H3PO4 → Ca3(PO4)2 + H2O', 204),
-(105, 100, 'NO2 - H + CO(NH2)2 → N2 + CO2 + H2O', 205),
+(105, 100, 'NO2 - H + Co(NH2)2 → N2 + Co2 + H2O', 205),
 (106, 100, 'Cu + HNO3 → Cu(NO3)2 + NO2 + H2O', 206),
 (107, 100, 'K2Cr2O7 + HCl → CrCl3 + KCl + H2O + Cl2', 207),
 (108, 100, 'Na2CO3 + HCl → NaCl + CO2 + H2O', 208),
@@ -117,9 +117,9 @@ INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrad
 (201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)', ' K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)'),
 (203, '1 KMnO4(aq) + 5 FeCl2(aq) + 8 HCl(aq) → 1 MnC', '2 KMnO4(aq) + 3 FeCl2(aq) + 2 HCl(aq) → 4 MnC', '1 KMnO4(aq) + 3 FeCl2(aq) + 3 HCl(aq) → 2 MnC'),
 (204, '3 Ca(OH)2 + 2 H3PO4 → 1 Ca3(PO4)2 + 6 H2O', '2 Ca(OH)2 + 3 H3PO4 → 2 Ca3(PO4)2 + 4 H2O', '4 Ca(OH)2 + 2 H3PO4 → 3 Ca3(PO4)2 + 6 H2O'),
-(205, '1 CO(NH2)2 + 2 NO2- + 2 H+ → 2 N2 + 1 CO2 + 3', '2 CO(NH2)2 + 3 NO2- + 1 H+ → 2 N2 + 2 CO2 + 2', '3 CO(NH2)2 + 1 NO2- + 2 H+ → 2 N2 + 3 CO2 + 2'),
+(205, '1 Co(NH2)2 + 2 NO2- + 2 H+ → 2 N2 + 1 Co2 + 3', '2 Co(NH2)2 + 3 NO2- + 1 H+ → 2 N2 + 2 Co2 + 2', '3 Co(NH2)2 + 1 NO2- + 2 H+ → 2 N2 + 3 Co2 + 2'),
 (206, '1 Cu + 4 HNO3 → 1 Cu(NO3)2 + 2 NO2 + 2 H2O', '4 Cu + 2 HNO3 → 2 Cu(NO3)2 + 3 NO2 + 1 H2O', '2 Cu + 3 HNO3 → 1 Cu(NO3)2 + 4 NO2 + 3 H2O'),
-(207, '1 K2Cr2O7 + 4 HCl → 2 CrCl3 + 4 KCl + 3 H2O +', '2 K2Cr2O7 + 2 HCl → 3 CrCl3 + 2 KCl + 2 H2O +', '2 K2Cr2O7 + 3 HCl → 4 CrCl3 + 3 KCl + 1 H2O +'),
+(207, '1 K2Cr2O7 + 4 HCl → 2 CrCl3 + 4 KCl + 3 H2O + 1 Cl2', '2 K2Cr2O7 + 2 HCl → 3 CrCl3 + 2 KCl + 2 H2O + 1 Cl2', '2 K2Cr2O7 + 3 HCl → 4 CrCl3 + 3 KCl + 1 H2O + 2 Cl2'),
 (208, '1 Na2CO3 + 2 HCl → 2 NaCl + 1 CO2 + 1 H2O', '2 Na2CO3 + 2 HCl → 2 NaCl + 3 CO2 + 2 H2O', '1 Na2CO3 + 4 HCl → 3 NaCl + 1 CO2 + 3 H2O'),
 (209, '1 C3H8 + 5 O2 → 3 CO2 + 4 H2O', '2 C3H8 + 5 O2 → 3 CO2 + 3 H2O', '1 C3H8 + 3 O2 → 3 CO2 + 2 H2O'),
 (210, '1 Na2SO4 + 1 BaCl2 → 1 BaSO4 + 2 NaCl', '2 Na2SO4 + 4 BaCl2 → 2 BaSO4 + 3 NaCl', '2 Na2SO4 + 4 BaCl2 → 3 BaSO4 + 2 NaCl'),
