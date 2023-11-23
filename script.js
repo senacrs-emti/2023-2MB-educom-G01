@@ -4,25 +4,25 @@ const context1 = canvas_esquerda.getContext("2d");
 const canvas_direita = document.getElementById("canvas_direita");
 const context2 = canvas_direita.getContext("2d");
 
-  // Inicializa a variável soma
-  var soma = 0; 
+function desenharCirculosAleatorios() {
+  // Limpa o canvas
+  context1.clearRect(0, 0, canvas_esquerda.width, canvas_esquerda.height);
 
-function somarValores() {
+  // Inicializa a variável soma
+  var soma = 0;
+
   // Obtém todos os elementos com a classe 'esquerda'
   let elementosEsquerda = document.querySelectorAll('.esquerda');
 
   // Itera sobre os elementos e adiciona seus valores à soma
   elementosEsquerda.forEach(function(elemento) {
-      soma += parseFloat(elemento.value) || 0; // Converte o valor para número e trata casos de valores não numéricos
+    soma += parseFloat(elemento.value) || 0; // Converte o valor para número e trata casos de valores não numéricos
   });
 
   // Exibe o resultado no console ou em outro lugar, dependendo do que você deseja fazer
   console.log(soma);
-}
 
-function desenharCirculosAleatorios() {
-  context1.clearRect(0, 0, canvas_esquerda.width, canvas_esquerda.height); // Limpa o canvas
-
+  // Desenha os círculos com base na soma
   for (let i = 0; i < soma; i++) {
     let x = Math.random() * canvas_esquerda.width;
     let y = Math.random() * canvas_esquerda.height;
