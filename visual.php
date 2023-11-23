@@ -1,6 +1,6 @@
 <div id="representacao">
-    <canvas class="atomos" id="canvas-produtos"></canvas>
-    <canvas class="atomos" id="canvas-reagentes"></canvas>
+    <canvas class="atomos" id="canvas_esquerda"></canvas>
+    <canvas class="atomos" id="canvas_direita"></canvas>
 </div>
 
     <form action="">  

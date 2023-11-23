@@ -27,11 +27,10 @@ include_once "functions.php";
           // guarda as questões
           $questoes = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
 
-          
-          
           // Escreve a questão 
           echo adicionarInput($questoes[0]['equacao']); ?>
       </h1>
+      <button id="botao">aa</button>
     </div>
         <div class="alternativas">
         <div>
@@ -44,7 +43,6 @@ include_once "functions.php";
             //echo '</pre>';
             ?>
 
-              
             <?php
             $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
             foreach ($opcoes as $value){
@@ -58,13 +56,39 @@ include_once "functions.php";
             <?php  
             }
             ?>
-
-
-            
-  
             <input type="submit" value="Enviar" id='Enviar' href="#">
             </form>
 </div>
          <?php
             include_once "visual.php";
             ?>
+            <form class="casa" action="get">
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    <?php echo($questoes[0]['RespostaCerta']); ?>
+  </label>
+<div>
+
+            <form class="casa" action="get">
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  <?php echo($questoes[0]['RespostaErrada']); ?>
+  </label>
+</div>
+<div>
+            <form class="casa" action="get">
+            <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  <?php echo($questoes[0]['RespostaErrada2']); ?>
+  </label>
+</div>
+</div>
+<input type="submit" value="Enviar" id='Enviar' href="#">
+</form></div>
+<?php
+  include_once "visual.php";
+?>
+
