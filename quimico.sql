@@ -115,7 +115,7 @@ CREATE TABLE `respostas` (
 
 INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrada2`) VALUES
 (201, '2 K2Cr2O7(aq) + 2 H2O(l) + 3 S(g) → 4 KOH(aq)', '2 K2Cr2O7(aq) + 2 H2O(l) + 2 S(g) → 2 KOH(aq)', ' K2Cr2O7(aq) + 1 H2O(l) + S(g) → 2 KOH(aq)'),
-(203, '1 KMnO4(aq) + 5 FeCl2(aq) + 8 HCl(aq) → 1 MnC', '2 KMnO4(aq) + 3 FeCl2(aq) + 2 HCl(aq) → 4 MnC', '1 KMnO4(aq) + 3 FeCl2(aq) + 3 HCl(aq) → 2 MnC'),
+(203, '1 KMnO4(aq) + 5 FeCl2(aq) + 8 HCl(aq) → 1 MnCl', '2 KMnO4(aq) + 3 FeCl2(aq) + 2 HCl(aq) → 4 MnCl', '1 KMnO4(aq) + 3 FeCl2(aq) + 3 HCl(aq) → 2 MnCl'),
 (204, '3 Ca(OH)2 + 2 H3PO4 → 1 Ca3(PO4)2 + 6 H2O', '2 Ca(OH)2 + 3 H3PO4 → 2 Ca3(PO4)2 + 4 H2O', '4 Ca(OH)2 + 2 H3PO4 → 3 Ca3(PO4)2 + 6 H2O'),
 (205, '1 CO(NH2)2 + 2 NO2- + 2 H+ → 2 N2 + 1 CO2 + 3', '2 CO(NH2)2 + 3 NO2- + 1 H+ → 2 N2 + 2 CO2 + 2', '3 CO(NH2)2 + 1 NO2- + 2 H+ → 2 N2 + 3 CO2 + 2'),
 (206, '1 Cu + 4 HNO3 → 1 Cu(NO3)2 + 2 NO2 + 2 H2O', '4 Cu + 2 HNO3 → 2 Cu(NO3)2 + 3 NO2 + 1 H2O', '2 Cu + 3 HNO3 → 1 Cu(NO3)2 + 4 NO2 + 3 H2O'),
