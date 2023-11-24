@@ -63,6 +63,7 @@ include_once "_functions.php";
     </div>
     <button id='Enviar'><a href="/2023-2MB-educom-G01/_index.php">Enviar</a></button>
 
+
     <?php
     include_once "_visual.php";
     ?>
