@@ -1,7 +1,6 @@
 <?php
-// conexao com o banco de dados
-$conexao = mysqli_connect('localhost', 'root', '', 'quimico');
 
+include_once "conexao.php"
 include_once "functions.php";
 ?>
 
@@ -59,7 +58,7 @@ include_once "functions.php";
             <?php  
             }
             ?>
-            <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/">
+            <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/index.php">
             </form>
 </div>
          <?php
