@@ -68,3 +68,4 @@ function desenharDireita() {
     context2.closePath();
   }
 }
+
