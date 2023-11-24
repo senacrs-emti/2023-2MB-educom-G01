@@ -36,8 +36,7 @@ include_once "functions.php";
     </script>
 
         <div class="alternativas">
-        <div>
-            <form action="post" action="">
+            <form  class="casa" action="post" action="">
             <?php
             $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
             array_rand($opcoes);
@@ -55,13 +54,13 @@ include_once "functions.php";
                 <label class="form-check-label" for="flexRadioDefault1">
                 <?php echo "$value <br>";?>
                 </label>
-              <div>
+            </div>
             <?php  
             }
             ?>
             <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/">
-            </form>
-</div>
+            </form>          
+        </div>
          <?php
             include_once "visual.php";
             ?>
