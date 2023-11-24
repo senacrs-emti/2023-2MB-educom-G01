@@ -33,7 +33,6 @@ include_once "_functions.php";
     <script>
 
     </script>
-
     <div class="alternativas">
       <form class="casa" action="post" action="">
         <?php
@@ -43,7 +42,6 @@ include_once "_functions.php";
         //print_r($opcoes);
         //echo '</pre>';
         ?>
-
         <?php
         $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
         foreach ($opcoes as $value) {
@@ -58,10 +56,14 @@ include_once "_functions.php";
         }
         ?>
 
+
     </div>
     </form>
     </div>
     <button id='Enviar'><a href="/2023-2MB-educom-G01/_index.php">Enviar</a></button>
+            
+            </form>          
+        </div>
 
 
     <?php

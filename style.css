@@ -4,7 +4,7 @@
 }
 body{
    
-    background-image: linear-gradient(rgb(105, 104, 104), rgb(3, 240, 252))
+    background-image: linear-gradient(rgb(105, 104, 104), rgb(62, 92, 161))
 }
 main{
     display: flex;
@@ -34,7 +34,7 @@ main{
 }
 .questao{
     height: 100px;
-    width: 40%;
+    width: 60%;
     border:solid 2px black;
     display: flex;
     align-items: center;
