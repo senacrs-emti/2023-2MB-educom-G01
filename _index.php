@@ -3,10 +3,7 @@
 include_once "_conexao.php";
 include_once "_functions.php";
 ?>
-
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,9 +36,9 @@ include_once "_functions.php";
             <?php
             $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
             array_rand($opcoes);
-            echo '<pre>';
-            print_r($opcoes);
-            echo '</pre>';
+            //echo '<pre>';
+            //print_r($opcoes);
+            //echo '</pre>';
             ?>
 
             <?php
@@ -57,15 +54,10 @@ include_once "_functions.php";
             <?php  
             }
             ?>
-
-            
             </form>          
         </div>
-
-            
             </form>
 </div>
-
          <?php
             include_once "_visual.php";
             ?>

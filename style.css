@@ -11,10 +11,8 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5%;
-    
+    padding-bottom: 5%;   
 }
-
 .atomos{
     height: 300px;
     width: 20%;
@@ -22,7 +20,6 @@ main{
     margin-left: 5px;
     background-color:#d1d2d1;
     box-shadow: 5px 5px 5px black;
-
 }
 #divisao{
     width: 20%;
@@ -37,11 +34,11 @@ main{
     width: 60%;
     border:solid 2px black;
     display: flex;
+    margin-top: 15px;
     align-items: center;
     justify-content: center;
     box-shadow: 2px 5px 5px black;
     background-image: linear-gradient(to bottom right, rgb(198, 37, 37), rgb(62, 92, 161));
-
 }
 .questao h1 {
     font-size: 20px;
@@ -57,13 +54,10 @@ li{
     list-style-type: none;
     background-color: blue;
     color: black;
-}
-
-.alternativas{
     
-    margin-top: 2%;
-
-
+}
+.alternativas{
+    margin-top: 3%;
 }
 #representacao{
     margin-top: 5%;
@@ -82,6 +76,4 @@ li{
     flex-direction: row;
     text-align: center;
     padding-left: 10px;
-
-    
 }
