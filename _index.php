@@ -34,39 +34,35 @@ include_once "_functions.php";
 
     </script>
 
-        <div class="alternativas">
-            <form  class="casa" action="post" action="">
-            <?php
-            $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
-            array_rand($opcoes);
-            //echo '<pre>';
-            //print_r($opcoes);
-            //echo '</pre>';
-            ?>
+    <div class="alternativas">
+      <form class="casa" action="post" action="">
+        <?php
+        $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
+        array_rand($opcoes);
+        //echo '<pre>';
+        //print_r($opcoes);
+        //echo '</pre>';
+        ?>
 
-            <?php
-            $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
-            foreach ($opcoes as $value){
-            ?>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                <?php echo "$value <br>";?>
-                </label>
-            </div>
-            <?php  
-            }
-            ?>
+        <?php
+        $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
+        foreach ($opcoes as $value) {
+        ?>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              <?php echo "$value <br>"; ?>
+            </label>
+          </div>
+        <?php
+        }
+        ?>
 
-            <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/">
-            </form>          
-        </div>
+    </div>
+    </form>
+    </div>
+    <button id='Enviar'><a href="/2023-2MB-educom-G01/_index.php">Enviar</a></button>
 
-            <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/index.php">
-            </form>
-</div>
-
-         <?php
-            include_once "_visual.php";
-            ?>
-
+    <?php
+    include_once "_visual.php";
+    ?>
