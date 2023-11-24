@@ -1,6 +1,8 @@
 <?php
+include_once('conexao.php');
 $nome = $_GET['nome'];
 $sql = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@ $sql = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
     <div id="rank">
         <h1>Rank</h1>
         <ul>
-            <li><?php  ?></li>
+            <li><?php $sql = "SELECT * FROM nickname" ?></li>
             <li></li>
             <li></li>
             <li></li>
