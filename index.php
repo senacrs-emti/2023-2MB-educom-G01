@@ -31,7 +31,6 @@ include_once "functions.php";
           echo adicionarInput($questoes[0]['equacao']); ?>
       </h1>
     </div>
-    <button onclick="somarValores()">aaaaaaa</button>
     <script>
 
     </script>
