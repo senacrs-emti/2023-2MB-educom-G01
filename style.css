@@ -28,6 +28,14 @@ main{
     box-shadow: 5px 5px 5px black;
 
 }
+#divisao{
+    width: 20%;
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80
+}
 .questao{
     height: 100px;
     width: 40%;

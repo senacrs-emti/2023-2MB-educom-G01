@@ -1,5 +1,6 @@
 <div id="representacao">
     <canvas class="atomos" id="canvas_esquerda"></canvas>
+    <div id='divisao'><h1>→</h1></div>
     <canvas class="atomos" id="canvas_direita"></canvas>
 </div>
 
