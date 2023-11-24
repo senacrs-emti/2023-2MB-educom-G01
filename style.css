@@ -34,7 +34,7 @@ main{
 }
 .questao{
     height: 100px;
-    width: 40%;
+    width: 60%;
     border:solid 2px black;
     display: flex;
     align-items: center;

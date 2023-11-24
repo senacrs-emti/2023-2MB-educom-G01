@@ -39,9 +39,9 @@ include_once "_functions.php";
             <?php
             $opcoes=array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
             array_rand($opcoes);
-            //echo '<pre>';
-            //print_r($opcoes);
-            //echo '</pre>';
+            echo '<pre>';
+            print_r($opcoes);
+            echo '</pre>';
             ?>
 
             <?php
@@ -58,7 +58,7 @@ include_once "_functions.php";
             }
             ?>
 
-            <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/">
+            
             </form>          
         </div>
 
