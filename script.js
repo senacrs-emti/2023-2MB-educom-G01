@@ -30,7 +30,7 @@ function desenharEsquerda() {
 
     context1.beginPath();
     context1.arc(x, y, raio, 0, 2 * Math.PI);
-    context1.fillStyle = 'red';
+    context1.fillStyle = 'blue';
     context1.fill();
     context1.stroke();
     context1.closePath();
