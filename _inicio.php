@@ -15,11 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
 }
 
 // Consulta SQL para obter dados para o ranking
-$sqlRanking = "SELECT * FROM usuario";
+$sqlRanking = "SELECT * FROM usuario ORDER BY pontos DESC";
 $resultado = $conexao->query($sqlRanking);
-
-// Fechar a conexão com o banco de dados
-$conexao->close();
 ?>
 
 <!DOCTYPE html>
@@ -38,15 +35,33 @@ $conexao->close();
     </form>
     <div id="rank">
         <h1>Rank</h1>
-        <ul>
-            <?php
-            // Exibir os resultados do ranking
-            while ($linha = $resultado->fetch_assoc()) {
-                echo "<li>" . $linha['Nickname'] . "</li>";
-            }
-            ?>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Apelido</th>
+                    <th>Pontos</th>
+                    <th>Tempo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Exibir os resultados do ranking em uma tabela
+                while ($linha = $resultado->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $linha['Nickname'] . "</td>";
+                    echo "<td>" . $linha['Pontos'] . "</td>";
+                    echo "<td>" . $linha['Tempo'] . "</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
 </main>
 </body>
 </html>
+
+<?php
+// Fechar a conexão com o banco de dados
+$conexao->close();
+?>
