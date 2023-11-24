@@ -1,9 +1,27 @@
 <?php
-include_once('conexao.php');
-$nome = $_GET['nome'];
-$sql = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
+include_once('_conexao.php');
 
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
+    $nome = $_GET['nome'];
+
+    // Executa a consulta SQL para inserir o nome no banco de dados
+    $sqlInserir = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
+    if ($conexao->query($sqlInserir) === TRUE) {
+        echo "Nome inserido com sucesso.";
+    } else {
+        echo "Erro ao inserir o nome: " . $conexao->error;
+    }
+}
+
+// Consulta SQL para obter dados para o ranking
+$sqlRanking = "SELECT * FROM usuario";
+$resultado = $conexao->query($sqlRanking);
+
+// Fechar a conexão com o banco de dados
+$conexao->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +31,7 @@ $sql = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
 </head>
 <body>
 <main>
-    <form action="inicio.php" method="get" class='inicio'>
+    <form action="_inicio.php" method="get" class='inicio'>
         <h1>Apelido</h1>
         <input type="text" id="nome" name='nome'>
         <button type='submit'>Entrar</button>
@@ -21,10 +39,12 @@ $sql = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
     <div id="rank">
         <h1>Rank</h1>
         <ul>
-            <li><?php $sql = "SELECT * FROM nickname" ?></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <?php
+            // Exibir os resultados do ranking
+            while ($linha = $resultado->fetch_assoc()) {
+                echo "<li>" . $linha['Nickname'] . "</li>";
+            }
+            ?>
         </ul>
     </div>
 </main>

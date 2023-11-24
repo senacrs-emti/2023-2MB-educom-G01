@@ -141,12 +141,11 @@ INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrad
 --
 
 CREATE TABLE `usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` INT AUTO_INCREMENT PRIMARY KEY,
   `Nickname` varchar(45) NOT NULL,
-  `Pontos` int(11) NOT NULL,
-  `Tempo` time NOT NULL,
-  `Responde_id` int(11) NOT NULL,
-  `Email` varchar(45) NOT NULL
+  `Pontos` int(11) NOT NULL DEFAULT 0,
+  `Tempo` time NOT NULL DEFAULT '00:00:00',
+  `Responde_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -174,12 +173,6 @@ ALTER TABLE `responde`
 ALTER TABLE `respostas`
   ADD PRIMARY KEY (`id`);
 
---
--- Índices para tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`),
-  ADD KEY `fk_Usuario_Responde1` (`Responde_id`);
 
 --
 -- Restrições para despejos de tabelas
