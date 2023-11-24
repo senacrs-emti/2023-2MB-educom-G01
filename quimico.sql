@@ -52,7 +52,7 @@ INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respostas_id`) VALUES
 (112, 100, 'C2H5OH+ O2→ CO2+ H2O', 212),
 (113, 100, 'Mg+ HCl→ MgCl2+ H2', 213),
 (114, 100, 'Al+ H2SO4→ Al2(SO4)3+ H2', 214),
-(115, 100, 'BaO4+ HNO3→ Ba(NO3)2 + H2O2 + O2', 215),
+(115, 100, 'BaO4+ HNO3→ Ba(NO3)2+ H2O2 + O2', 215),
 (116, 100, 'SO2+ NaOH→ Na2SO3+ H2O', 216),
 (117, 100, 'KClO4→ KCl+ O2', 217),
 (118, 100, 'CS2+ H2S+ Cu→ Cu2S+ CH4', 218),
