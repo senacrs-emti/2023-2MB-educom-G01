@@ -4,7 +4,7 @@
 }
 body{
    
-    background-image: linear-gradient(rgb(105, 104, 104), rgb(163, 163, 158))
+    background-image: linear-gradient(rgb(105, 104, 104), rgb(3, 240, 252))
 }
 main{
     display: flex;
@@ -20,7 +20,7 @@ main{
     width: 20%;
     border:solid 1px black;
     margin-left: 5px;
-    background-color:#a1a5a1;
+    background-color:#d1d2d1;
     box-shadow: 5px 5px 5px black;
 
 }

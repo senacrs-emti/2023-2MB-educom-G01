@@ -62,7 +62,7 @@ include_once "_functions.php";
             </form>          
         </div>
 
-            <input type="submit" value="Enviar" id='Enviar' href="http://localhost:8080/2023-2MB-educom-G01/index.php">
+            
             </form>
 </div>
 
