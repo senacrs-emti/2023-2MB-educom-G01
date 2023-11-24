@@ -33,6 +33,7 @@ $resultado = $conexao->query($sqlRanking);
         <input type="text" id="nome" name='nome'>
         <button type='submit'>Entrar</button>
     </form>
+    <a href="./_index.php"><button>Começar</button></a>
     <div id="rank">
         <h1>Rank</h1>
         <table>

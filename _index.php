@@ -12,9 +12,11 @@ include_once "_functions.php";
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <a href="./_inicio.php"><button class="botao-inicio">Inicio</button></a>
+    <div id="pontos"><p>Pontuação:<?php $sql = "SELECT Pontos FROM usuario where nickname='$nome'" ?></p></div>
+  </header>
   <main>
-    <div id="pontos"><p>Pontuação:<?php $sql = "SELECT pontos FROM usuario" ?></p></div>
     <div class="questao">
       <h1><?php // Procura e seleciona as questões
           $sql = "SELECT * FROM questoes inner join respostas on questoes.Respostas_id=respostas.id ORDER BY RAND() LIMIT 1";

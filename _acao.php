@@ -1,0 +1,1 @@
+criar variavel $nome para usar tanto no _inicio.php quando no _index.php
