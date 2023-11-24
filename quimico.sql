@@ -39,25 +39,25 @@ CREATE TABLE `questoes` (
 --
 
 INSERT INTO `questoes` (`id`, `Pontos`, `equacao`, `Respostas_id`) VALUES
-(101, 100, 'K2Cr2O7(aq) + H2O(l) + S(g) → KOH(aq) + Cr2O3', 201),
-(103, 100, ' KMnO4(aq) + FeCl2(aq) + HCl(aq) →  MnCl2(aq)', 203),
-(104, 100, 'Ca(OH)2 + H3PO4 → Ca3(PO4)2 + H2O', 204),
-(105, 100, 'NO2 - H + CO(NH2)2 → N2 + CO2 + H2O', 205),
-(106, 100, 'Cu + HNO3 → Cu(NO3)2 + NO2 + H2O', 206),
-(107, 100, 'K2Cr2O7 + HCl → CrCl3 + KCl + H2O + Cl2', 207),
-(108, 100, 'Na2CO3 + HCl → NaCl + CO2 + H2O', 208),
-(109, 100, 'C3H8 + O2 → CO2 + H2O', 209),
-(110, 100, 'Na2SO4 + BaCl2 → BaSO4 + NaCl', 210),
-(111, 100, 'Fe2O3 + H2 → Fe + H2O', 211),
-(112, 100, 'C2H5OH + O2 → CO2 + H2O', 212),
-(113, 100, 'Mg + HCl → MgCl2 + H2', 213),
-(114, 100, 'Al + H2SO4 → Al2(SO4)3 + H2', 214),
-(115, 100, 'BaO4 + HNO3 → Ba(NO3)2 + H2O2 + O2', 215),
-(116, 100, 'SO2 + NaOH → Na2SO3 + H2O', 216),
-(117, 100, 'KClO4 → KCl+ O2', 217),
-(118, 100, 'CS2 + H2S + Cu → Cu2S + CH4', 218),
-(119, 100, 'Br2 + NaOH → NaBr + NaBrO3 + H2O', 219),
-(120, 100, 'Co2 + BrO + H → Co3 + Br2 + H2O', 220);
+(101, 100, 'K2Cr2O7(aq)+ H2O(l)+ S(g)→ KOH(aq)+ Cr2O3', 201),
+(103, 100, 'KMnO4(aq)+ FeCl2(aq)+ HCl(aq)→ MnCl2(aq)', 203),
+(104, 100, 'Ca(OH)2+ H3PO4→ Ca3(PO4)2+ H2O', 204),
+(105, 100, 'NO2- H+ CO(NH2)2→ N2+ CO2+ H2O', 205),
+(106, 100, 'Cu+ HNO3→ Cu(NO3)2+ NO2+ H2O', 206),
+(107, 100, 'K2Cr2O7+ HCl→ CrCl3+ KCl+ H2O+ Cl2', 207),
+(108, 100, 'Na2CO3+ HCl→ NaCl+ CO2+ H2O', 208),
+(109, 100, 'C3H8+ O2→ CO2+ H2O', 209),
+(110, 100, 'Na2SO4+ BaCl2→ BaSO4+ NaCl', 210),
+(111, 100, 'Fe2O3+ H2→ Fe+ H2O', 211),
+(112, 100, 'C2H5OH+ O2→ CO2+ H2O', 212),
+(113, 100, 'Mg+ HCl→ MgCl2+ H2', 213),
+(114, 100, 'Al+ H2SO4→ Al2(SO4)3+ H2', 214),
+(115, 100, 'BaO4+ HNO3→ Ba(NO3)2 + H2O2 + O2', 215),
+(116, 100, 'SO2+ NaOH→ Na2SO3+ H2O', 216),
+(117, 100, 'KClO4→ KCl+ O2', 217),
+(118, 100, 'CS2+ H2S+ Cu→ Cu2S+ CH4', 218),
+(119, 100, 'Br2+ NaOH→ NaBr+ NaBrO3+ H2O', 219),
+(120, 100, 'Co2+ BrO+ H→ Co3+ Br2+ H2O', 220);
 
 -- --------------------------------------------------------
 
