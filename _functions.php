@@ -25,4 +25,11 @@ function adicionarInput($string) {
   return $resultado;
 
 }
+function responder(){
+  if($string){
+    $CertoErrado = 'alguma função';
+  }else if($string){
+    $CertoErrado = 'Outra coisa';
+  }
+}
 ?>

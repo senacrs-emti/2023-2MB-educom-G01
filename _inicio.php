@@ -62,6 +62,7 @@ $resultado = $conexao->query($sqlRanking);
 </body>
 </html>
 
+
 <?php
 // Fechar a conexão com o banco de dados
 $conexao->close();
