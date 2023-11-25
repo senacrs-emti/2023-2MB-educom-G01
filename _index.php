@@ -56,7 +56,7 @@ include_once "_functions.php";
         ?>       
         </div>
             </form>
-    <button id='Enviar'><a href="./_index.php">Enviar</a></button>
+    <a href="./_index.php"><button id='Enviar'>Próxima</button></a>
             </form>          
         </div>
     <?php

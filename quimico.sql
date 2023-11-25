@@ -129,7 +129,7 @@ INSERT INTO `respostas` (`id`, `RespostaCerta`, `RespostaErrada`, `RespostaErrad
 (212, '1 C2H5OH + 3 O2 → 2 CO2 + 3 H2O', '3 C2H5OH + 3 O2 → 3 CO2 + 2 H2O', '2 C2H5OH + 3 O2 → 4 CO2 + 2 H2O'),
 (213, '1 Mg + 2 HCl → 1 MgCl2 + 1 H2', '2 Mg + 2 HCl → 1 MgCl2 + 1 H2', '2 Mg + 1 HCl → 1 MgCl2 + 2 H2'),
 (214, '2 Al + 3 H2SO4 → 1 Al2(SO4)3 + 3 H2', '3 Al + 2 H2SO4 → 2 Al2(SO4)3 + 3 H2', '3 Al + 2 H2SO4 → 1 Al2(SO4)3 + 4 H2'),
-(215, '1 BaO4 + 2 HNO3 → 1 Ba(NO3)2 + 1 H2O2 + 1 O2', '1 BaO4 + 2 HNO3 → 2 Ba(NO3)2 + 2 H2O2 + 1 O2', '1 BaO4 + 2 HNO3 → 2 Ba(NO3)2 + 3 H2O2 + 1 O2'),
+(215, '1 BaO4 + 2 HNO3 → 1 Ba(NO3)2 + 1 H2O2+ 1 O2', '1 BaO4 + 2 HNO3 → 2 Ba(NO3)2 + 2 H2O2 + 1 O2', '1 BaO4 + 2 HNO3 → 2 Ba(NO3)2 + 3 H2O2 + 1 O2'),
 (216, '1 SO2 + 2 NaOH → 1 Na2SO3 + 1 H2O', '2 SO2 + 2 NaOH → 1 Na2SO3 + 2 H2O', '2 SO2 + 1 NaOH → 1 Na2SO3 + 1 H2O'),
 (217, '1 KClO4 → 1 KCl+ 2 O2', '1 KClO4 → 4 KCl+ 2 O2', '2 KClO4 → 4 KCl+ 2 O2'),
 (218, '1 CS2 + 2 H2S + 8 Cu → 4 Cu2S + 1 CH4', '1 CS2 + 2 H2S + 3 Cu → 3 Cu2S + 2 CH4', '3 CS2 + 2 H2S + 8 Cu → 1 Cu2S + 2 CH4'),
