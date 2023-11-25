@@ -2,40 +2,78 @@
     margin: 0;
     padding: 0;
 }
+body{
+   
+    background-image: linear-gradient(rgb(105, 104, 104), rgb(62, 92, 161))
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;   
+}
 .atomos{
-    height: 500px;
-    width: 40%;
+    height: 300px;
+    width: 20%;
     border:solid 1px black;
     margin-left: 5px;
-    }
-    .questao{
-        height: 15vh;
-        width: 40vw;
-        border:solid 2px black;
-        margin-left: 30%;
-        padding-bottom: 5%; 
-        margin-top: 10px;
-    
-    }
-    li{
-        margin-left: 95px;
-        margin: 20px;
-    }
-    .Teste1 {
-        margin-left: 35%;
-        padding-bottom: 5%;
-    }
-ul{
-    margin: 30px;
-    margin-left: 450px;
+    background-color:#d1d2d1;
+    box-shadow: 5px 5px 5px black;
+}
+#divisao{
+    width: 20%;
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:80
+}
+.questao{
+    height: 100px;
+    width: 60%;
+    border:solid 2px black;
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 5px 5px black;
+    background-image: linear-gradient(to bottom right, rgb(198, 37, 37), rgb(62, 92, 161));
+}
+.questao h1 {
+    font-size: 20px;
 }
 input{
-    margin: 10px;
-    margin-left: 20px;
+    height: 15px;
+    width: 30px;
 }
-input[type="submit"]{
-    margin-left: 98vh;
+li{
+    margin-left: 30px;
+}
+.resposta{
+    list-style-type: none;
+    background-color: blue;
+    color: black;
+    
+}
+.alternativas{
+    margin-top: 3%;
+}
+#representacao{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+#Enviar{
+    width: 70PX;
     height: 30px;
-    border-radius: 10px;
-    width: 70px;
+    margin-left: 45%;
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    box-shadow: 1px 1px rgb(0, 0, 0);
+    display: flex; 
+    flex-direction: row;
+    text-align: center;
+    padding-left: 10px;
 }
