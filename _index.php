@@ -1,9 +1,18 @@
 <?php
-
 include_once "_conexao.php";
 include_once "_functions.php";
+
+// Verifica se o parâmetro 'nome' está presente na URL
+if (isset($_GET['nome'])) {
+    $nome = $_GET['nome'];
+} else {
+    // Se o parâmetro 'nome' não estiver presente, redireciona para a página inicial
+    header("Location: ./_inicio.php");
+    exit();
+}
 ?>
-<html lang="en">
+
+<html lang="Pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +23,14 @@ include_once "_functions.php";
 <body>
   <header>
     <a href="./_inicio.php"><button class="botao-inicio">Inicio</button></a>
-    <div id="pontos"><p>Pontuação:<?php $sql = "SELECT Pontos FROM usuario where nickname='$nome'" ?></p></div>
+    <p>Pontuação:
+    <?php
+    $sqlPontuacao = "SELECT Pontos FROM usuario WHERE nickname='$nome'";
+    $resultadoPontuacao = mysqli_query($conexao, $sqlPontuacao);
+    $pontuacao = mysqli_fetch_assoc($resultadoPontuacao)['Pontos'];
+    echo $pontuacao;
+    ?>
+    </p>
     <button id="openPopupButton">Ajuda</button>
   </header>
   <main>
@@ -47,6 +63,32 @@ include_once "_functions.php";
         //echo '</pre>';
         ?>
         <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['flexRadioDefault'])) {
+            // Obtém a resposta selecionada pelo usuário
+            $respostaSelecionada = $_POST['flexRadioDefault'];
+        
+            // Obtém a questão atual e suas respostas do banco de dados
+            $sql = "SELECT * FROM questoes INNER JOIN respostas ON questoes.Respostas_id = respostas.id ORDER BY RAND() LIMIT 1";
+            $resultado = mysqli_query($conexao, $sql);
+            $questaoAtual = mysqli_fetch_assoc($resultado);
+        
+            // Verifica se a resposta selecionada está correta
+            $respostaCerta = ($respostaSelecionada == $questaoAtual['RespostaCerta']) ? 'RespostaCerta' : '';
+        
+            // Chama a função para atualizar os pontos
+            atualizarPontos($nome, $respostaCerta);
+        
+            // Redireciona para a próxima questão ou página
+            if ($respostaCerta == '') {
+                // Se a resposta estiver incorreta, exibe o popup
+                echo "<script>alert('Você errou!');</script>";
+            } else {
+                // Se a resposta estiver correta, redireciona para a próxima questão
+                header("Location: ./_index.php?nome=$nome");
+                exit();
+            }
+        }
+        
         $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
         foreach ($opcoes as $value) {
         ?>
@@ -56,9 +98,7 @@ include_once "_functions.php";
               <?php echo "$value <br>"; ?>
             </label>
           </div>
-        <?php
-        }
-        ?>       
+        <?php } ?>       
     </div>
     <a href="./_index.php"><button  id='Enviar'>Próxima</button></a>
     </form>          

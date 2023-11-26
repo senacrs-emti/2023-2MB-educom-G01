@@ -1,4 +1,5 @@
 <?php 
+//Gerador de inputs, classes e ID
 function adicionarInput($string) {
   $palavras = explode(" ", $string);
   $id_atual = 1;
@@ -25,11 +26,43 @@ function adicionarInput($string) {
   return $resultado;
 
 }
-function responder(){
-  if($string){
-    $CertoErrado = 'alguma função';
-  }else if($string){
-    $CertoErrado = 'Outra coisa';
+
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
+  $nome = $_GET['nome'];
+
+  // Executa a consulta SQL para inserir o nome no banco de dados
+  $sqlInserir = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
+  if ($conexao->query($sqlInserir) === TRUE) {
+      echo "Nome inserido com sucesso.";
+  } else {
+      echo "Erro ao inserir o nome: " . $conexao->error;
   }
+}
+// Consulta SQL para obter dados para o ranking
+$sqlRanking = "SELECT * FROM usuario ORDER BY pontos DESC";
+$resultado = $conexao->query($sqlRanking);
+
+function atualizarPontos($nome, $respostaCerta) {
+  global $conexao;
+
+  // Obtém o valor atual dos pontos do usuário
+  $sql = "SELECT pontos FROM usuario WHERE Nickname = '$nome'";
+  $resultado = $conexao->query($sql);
+  $pontos = $resultado->fetch_assoc()['pontos'];
+
+  // Atualiza os pontos do usuário
+  if ($respostaCerta == 'RespostaCerta') {
+    $pontos += 100;
+  }
+
+  $sql = "UPDATE usuario SET pontos = $pontos WHERE Nickname = '$nome'";
+  $conexao->query($sql);
+}
+
+
+
+function pontos(){
+
 }
 ?>

@@ -1,22 +1,7 @@
 <?php
 include_once('_conexao.php');
 
-// Verifica se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
-    $nome = $_GET['nome'];
-
-    // Executa a consulta SQL para inserir o nome no banco de dados
-    $sqlInserir = "INSERT INTO usuario (Nickname) VALUES ('$nome')";
-    if ($conexao->query($sqlInserir) === TRUE) {
-        echo "Nome inserido com sucesso.";
-    } else {
-        echo "Erro ao inserir o nome: " . $conexao->error;
-    }
-}
-
-// Consulta SQL para obter dados para o ranking
-$sqlRanking = "SELECT * FROM usuario ORDER BY pontos DESC";
-$resultado = $conexao->query($sqlRanking);
+include_once('_functions.php')
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +18,7 @@ $resultado = $conexao->query($sqlRanking);
         <input type="text" id="nome" name='nome'>
         <button type='submit'>Entrar</button>
     </form>
-    <a href="./_index.php"><button>Começar</button></a>
+    <a href="./_index.php?nome=<?php echo $nome; ?>"><button>Começar</button></a>
     <div id="rank">
         <h1>Rank</h1>
         <table>
