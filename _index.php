@@ -82,10 +82,12 @@ if (isset($_GET['nome'])) {
             if ($respostaCerta == '') {
                 // Se a resposta estiver incorreta, exibe o popup
                 echo "<script>alert('Você errou!');</script>";
+                header("Location: ./derrota.php");
+
             } else {
                 // Se a resposta estiver correta, redireciona para a próxima questão
                 header("Location: ./_index.php?nome=$nome");
-                exit();
+               
             }
         } 
         foreach ($opcoes as $value) {
