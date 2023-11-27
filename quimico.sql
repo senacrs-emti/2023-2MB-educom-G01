@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `questoes` (
   `id` int(11) NOT NULL,
-  `Pontos` varchar(45) NOT NULL,
   `Pontos` int(11) NOT NULL,
   `equacao` varchar(45) NOT NULL,
   `Respostas_id` int(11) NOT NULL
@@ -104,8 +103,7 @@ INSERT INTO `responde` (`id`, `Questoes_id`, `Respostas_id`) VALUES
 --
 
 CREATE TABLE `respostas` (
-  `id` int(11) NOT NULL,
-  `id` int(11) NOT NULL DEFAULT 0,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `RespostaCerta` varchar(45) DEFAULT NULL,
   `RespostaErrada` varchar(45) DEFAULT NULL,
   `RespostaErrada2` varchar(45) DEFAULT NULL

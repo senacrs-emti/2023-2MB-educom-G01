@@ -26,6 +26,9 @@ function adicionarInput($string) {
   return $resultado;
 
 }
+// Consulta SQL para obter dados para o ranking
+$sqlRanking = "SELECT * FROM usuario ORDER BY pontos DESC";
+$resultado = $conexao->query($sqlRanking);
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
@@ -39,9 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['nome'])) {
       echo "Erro ao inserir o nome: " . $conexao->error;
   }
 }
-// Consulta SQL para obter dados para o ranking
-$sqlRanking = "SELECT * FROM usuario ORDER BY pontos DESC";
-$resultado = $conexao->query($sqlRanking);
 
 function atualizarPontos($nome, $respostaCerta) {
   global $conexao;

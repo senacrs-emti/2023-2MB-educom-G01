@@ -87,9 +87,7 @@ if (isset($_GET['nome'])) {
                 header("Location: ./_index.php?nome=$nome");
                 exit();
             }
-        }
-        
-        $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
+        } 
         foreach ($opcoes as $value) {
         ?>
           <div class="form-check">

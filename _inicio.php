@@ -1,7 +1,7 @@
 <?php
 include_once('_conexao.php');
 
-include_once('_functions.php')
+include_once('_functions.php');
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ include_once('_functions.php')
             <tbody>
                 <?php
                 // Exibir os resultados do ranking em uma tabela
-                while ($linha = $resultado->fetch_assoc()) {
+                while ($linha = $resultado ->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $linha['Nickname'] . "</td>";
                     echo "<td>" . $linha['Pontos'] . "</td>";
