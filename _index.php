@@ -10,6 +10,7 @@ if (isset($_GET['nome'])) {
     header("Location: ./_inicio.php");
     exit();
 }
+
 ?>
 
 <html lang="Pt-br">
@@ -57,50 +58,51 @@ if (isset($_GET['nome'])) {
       <form class="casa" method="post" action="">
         <?php
         $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
-        array_rand($opcoes);
-        //echo '<pre>';
+        //echo '<pre>'
+        array_rand($opcoes)
         //print_r($opcoes);
         //echo '</pre>';
         ?>
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['flexRadioDefault'])) {
-            // Obtém a resposta selecionada pelo usuário
-            $respostaSelecionada = $_POST['flexRadioDefault'];
-        
-            // Obtém a questão atual e suas respostas do banco de dados
-            $sql = "SELECT * FROM questoes INNER JOIN respostas ON questoes.Respostas_id = respostas.id ORDER BY RAND() LIMIT 1";
-            $resultado = mysqli_query($conexao, $sql);
-            $questaoAtual = mysqli_fetch_assoc($resultado);
-        
-            // Verifica se a resposta selecionada está correta
-            $respostaCerta = ($respostaSelecionada == $questaoAtual['RespostaCerta']) ? 'RespostaCerta' : '';
-        
-            // Chama a função para atualizar os pontos
-            atualizarPontos($nome, $respostaCerta);
-        
-            // Redireciona para a próxima questão ou página
-            if ($respostaCerta == '') {
-                // Se a resposta estiver incorreta, exibe o popup
-                echo "<script>alert('Você errou!');</script>";
-                header("Location: ./derrota.php");
-
-            } else {
-                // Se a resposta estiver correta, redireciona para a próxima questão
-                header("Location: ./_index.php?nome=$nome");
-               
-            }
-        } 
-        foreach ($opcoes as $value) {
-        ?>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              <?php echo "$value <br>"; ?>
-            </label>
-          </div>
-        <?php } ?>       
+foreach ($opcoes as $indice => $value) {
+    ?>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="opcao" id="flexRadioDefault<?php echo $indice + 1; ?>" value="<?php echo $indice; ?>" data-resposta="<?php echo ($indice === 'RespostaCerta') ? 'certo' : 'errado'; ?>">
+        <label class="form-check-label" for="flexRadioDefault<?php echo $indice + 1; ?>">
+            <?php echo $value; ?>
+        </label>
     </div>
-    <a href="./_index.php"><button  id='Enviar'>Próxima</button></a>
+    <?php
+}
+// Verifique se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Verifica se o campo 'opcao' está definido no array $_POST
+  if (isset($_POST['opcao'])) {
+      // Obtém o valor selecionado
+      $opcaoSelecionada = $_POST['opcao'];
+
+      // Obtém a resposta correta associada à opção selecionada
+      $respostaCorreta = 'RespostaCerta';
+      $respostaCorretaValor = array_search($respostaCorreta, $opcoes);
+
+      // Verifica se a opção selecionada é a resposta correta
+      if ($opcaoSelecionada == $respostaCorretaValor) {
+          echo "Parabéns! Você acertou!";
+          atualizarPontos($nome, $respostaCorreta);
+      } else {
+          echo "Ops! Você errou.";
+          header("Location: ./_inicio.php");
+          exit(); // Certifique-se de sair após o redirecionamento para evitar execução adicional
+      }
+  } else {
+      echo "Nenhuma opção selecionada";
+  }
+} else {
+  echo "O formulário não foi submetido";
+}
+?> 
+    </div>
+    <button  id='Enviar'>Próxima</button>
     </form>          
     </div>
 
