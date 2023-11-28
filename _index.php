@@ -32,7 +32,7 @@ if (isset($_GET['nome'])) {
     echo $pontuacao;
     ?>
     </p>
-    <button id="openPopupButton">Ajuda</button>
+    <button id="openPopupButton" class="botao">Ajuda</button>
   </header>
   <main>
   <div id="popupContainer" class="popup-container">

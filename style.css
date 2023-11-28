@@ -64,6 +64,14 @@ li{
     display: flex;
     justify-content: center;
 }
+.botao{
+    width: 70PX;
+    height: 30px;
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    box-shadow: 1px 1px rgb(0, 0, 0);
+}
 #Enviar{
     width: 70PX;
     height: 30px;
