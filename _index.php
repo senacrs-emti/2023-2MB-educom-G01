@@ -59,7 +59,7 @@ if (isset($_GET['nome'])) {
         <?php
         $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
         //echo '<pre>'
-        array_rand($opcoes)
+        shuffle($opcoes);
         //print_r($opcoes);
         //echo '</pre>';
         ?>
