@@ -103,7 +103,7 @@ INSERT INTO `responde` (`id`, `Questoes_id`, `Respostas_id`) VALUES
 --
 
 CREATE TABLE `respostas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL primary key AUTO_INCREMENT,
   `RespostaCerta` varchar(45) DEFAULT NULL,
   `RespostaErrada` varchar(45) DEFAULT NULL,
   `RespostaErrada2` varchar(45) DEFAULT NULL
