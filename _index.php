@@ -57,17 +57,16 @@ if (isset($_GET['nome'])) {
     <div class="alternativas">
       <form class="casa" method="post" action="">
         <?php
+  
         $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
-        //echo '<pre>'
         shuffle($opcoes);
-        //print_r($opcoes);
-        //echo '</pre>';
         ?>
         <?php
 foreach ($opcoes as $indice => $value) {
+  $tipoResposta = array_search($value,$questoes[0]);
     ?>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="opcao" id="flexRadioDefault<?php echo $indice + 1; ?>" value="<?php echo $indice; ?>" data-resposta="<?php echo ($indice === 'RespostaCerta') ? 'certo' : 'errado'; ?>">
+        <input class="form-check-input" type="radio" name="opcao" id="flexRadioDefault<?php echo $indice + 1; ?>" value="<?php echo $indice; ?>" data-resposta="<?php echo ($tipoResposta === 'RespostaCerta') ? 'certo' : 'errado'; ?>">
         <label class="form-check-label" for="flexRadioDefault<?php echo $indice + 1; ?>">
             <?php echo $value; ?>
         </label>
