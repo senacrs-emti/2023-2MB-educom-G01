@@ -23,18 +23,9 @@ if (isset($_GET['nome'])) {
 
 <body>
   <header>
-    <a href="./_inicio.php"><button class="botao-inicio">Inicio</button></a>
-    <p>Pontuação:
-    <?php
-    $sqlPontuacao = "SELECT Pontos FROM usuario WHERE nickname='$nome'";
-    $resultadoPontuacao = mysqli_query($conexao, $sqlPontuacao);
-    $pontuacao = mysqli_fetch_assoc($resultadoPontuacao)['Pontos'];
-    echo $pontuacao;
-    ?>
-    </p>
-    <button id="openPopupButton" class="botao">Ajuda</button>
-  </header>
-  <main>
+    <div  class="dhl"><a href="./_inicio.php"><button class="botao">Voltar para o inicio</button></a></div>
+    
+    <div class="dhl"><button id="openPopupButton" class="botao">Ajuda</button></div>
   <div id="popupContainer" class="popup-container">
       <div class="popup-content">
         <span class="close-popup" onclick="fecharPopup()">&times;</span>
@@ -42,6 +33,18 @@ if (isset($_GET['nome'])) {
         <p>O jogo é simples, você deve apenas fazer o balanceamento químico da equação apresentada. <br>Para isso, o jogo contém blocos que podem ser preenchidos com números que multiplicam a quantidade de moléculas. <br>Você pode ver a quantidade de moléculas no canvas a baixo das opções de resposta.</p>
       </div>
     </div>
+    <br>
+    <div class="dh"> <p>Pontuação:
+    <?php
+    $sqlPontuacao = "SELECT Pontos FROM usuario WHERE nickname='$nome'";
+    $resultadoPontuacao = mysqli_query($conexao, $sqlPontuacao);
+    $pontuacao = mysqli_fetch_assoc($resultadoPontuacao)['Pontos'];
+    echo $pontuacao;
+    ?>
+    </p></div>
+  </header>
+  <main>
+  
     <div class="questao">
       <h1><?php // Procura e seleciona as questões
           $sql = "SELECT * FROM questoes inner join respostas on questoes.Respostas_id=respostas.id ORDER BY RAND() LIMIT 1";
@@ -59,7 +62,7 @@ if (isset($_GET['nome'])) {
         <?php
         $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
         //echo '<pre>'
-        shuffle($opcoes);
+        $opcoes = array_rand($opcoes);
         //print_r($opcoes);
         //echo '</pre>';
         ?>
@@ -102,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?> 
     </div>
-    <button  id='Enviar'>Próxima</button>
+    <button  class='botao' id='Enviar' >Próxima</button>
     </form>          
     </div>
 
