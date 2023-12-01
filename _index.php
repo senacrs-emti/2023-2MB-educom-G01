@@ -2,22 +2,13 @@
 include_once "_conexao.php";
 include_once "_functions.php";
 
-// Verifica se o parâmetro 'nome' está presente na URL
-if (isset($_GET['nome'])) {
-    $nome = $_GET['nome'];
-} else {
-    // Se o parâmetro 'nome' não estiver presente, redireciona para a página inicial
-    header("Location: ./_inicio.php");
-    exit();
-}
-
 ?>
 
 <html lang="Pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balanceador quimico</title>
+  <title>Balanceador químico</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,7 +21,7 @@ if (isset($_GET['nome'])) {
       <div class="popup-content">
         <span class="close-popup" onclick="fecharPopup()">&times;</span>
         <h1>Como jogar:</h1>
-        <p>O jogo é simples, você deve apenas fazer o balanceamento químico da equação apresentada. <br>Para isso, o jogo contém blocos que podem ser preenchidos com números que multiplicam a quantidade de moléculas. <br>Você pode ver a quantidade de moléculas no canvas a baixo das opções de resposta.</p>
+        <p>O jogo é simples, você deve apenas fazer o balanceamento químico da equação apresentada. <br>Para isso, o jogo contém blocos que podem ser preenchidos com números que multiplicam a quantidade de moléculas. <br>Você pode ver a quantidade de moléculas no canvas abaixo das opções de resposta.</p>
       </div>
     </div>
     <br>
@@ -58,43 +49,33 @@ if (isset($_GET['nome'])) {
       </h1>
     </div>
     <div class="alternativas">
-      <form class="casa" method="post" action="">
-        <?php
-  
-        $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
-        shuffle($opcoes);
-        ?>
-        <?php
-foreach ($opcoes as $indice => $value) {
-  $tipoResposta = array_search($value,$questoes[0]);
-  echo $tipoResposta
+    <?php 
+      $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
+      shuffle($opcoes);
     ?>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="opcao" id="flexRadioDefault<?php echo $indice + 1; ?>" value="<?php echo $indice; ?>" data-resposta="<?php echo ($tipoResposta === 'RespostaCerta') ? 'certo' : 'errado'; ?>">
-        <label class="form-check-label" for="flexRadioDefault<?php echo $indice + 1; ?>">
-            <?php echo $value; ?>
-        </label>
-    </div>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $respostaSelecionada = $_POST['opcao']; // Obtém a opção selecionada pelo usuário
-
-      // Verifica se a resposta selecionada está correta ou não
-      $respostaCorreta = $opcoes[$respostaSelecionada];
-      $tipoResposta = array_search($respostaCorreta, $questoes[0]);
-
-      if ($tipoResposta === 'RespostaCerta') {
-          echo "Resposta certa!";
-      } else {
-          header("Location: _inicio.php"); // Redireciona para _inicio.php se a resposta estiver errada
-          exit();
+      <form action="_index.php" method="post">
+      <?php foreach ($opcoes as $indice => $value) {
+      $tipoResposta = array_search($value, $questoes[0]);
+        // Marca o botão de opção correto
+        $checked = ($tipoResposta === 'RespostaCerta') ? 'checked' : '';
+    
+        echo "<label for='opcao$indice'>$value</label>";
+        echo "<input type='radio' name='opcao' id='opcao$indice' value='$tipoResposta' $checked>";
       }
-  }
-}
-?> 
-    </div>
-    <button  class='botao' id='Enviar' >Próxima</button>
-    </form>          
+      ?>
+      <button type="submit">Verificar Resposta</button>
+      </form>
+      <?php
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          $respostaUsuario = isset($_POST['opcao']) ? $_POST['opcao'] : '';
+
+          if ($respostaUsuario === 'RespostaCerta') {
+              echo 'Resposta correta!';
+          } else {
+              echo 'Resposta errada. Tente novamente.';
+          }
+      }
+      ?>
     </div>
 
     <script>
@@ -114,3 +95,5 @@ document.getElementById('openPopupButton').addEventListener('click', abrirPopup)
     <?php
     include_once "_visual.php";
     ?>
+</body>
+</html>
