@@ -23,7 +23,7 @@ if (isset($_GET['nome'])) {
 
 <body>
   <header>
-    <div  class="dhl"><a href="./_inicio.php"><button class="botao">Voltar para o inicio</button></a></div>
+    <div  class="dhl"><a href="./_inicio.php"><button class="botao">inicio</button></a></div>
     
     <div class="dhl"><button id="openPopupButton" class="botao">Ajuda</button></div>
   <div id="popupContainer" class="popup-container">

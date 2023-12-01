@@ -75,7 +75,9 @@ li{
     
 
 }
-
+h1{
+    margin-left: 5%;
+}
 .botao:hover{
     background-color: rgb(29, 15, 221);
 }
@@ -117,7 +119,8 @@ li{
 }
 
 .dh{
-    
+    margin-left: 35%;
+    margin-top: 3%;
 }
 
 header{
