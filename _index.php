@@ -62,19 +62,21 @@ include_once "_functions.php";
         echo "<label for='opcao$indice'>$value</label>";
         echo "<input type='radio' name='opcao' id='opcao$indice' value='$tipoResposta' $checked>";
       }
+      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $respostaUsuario = isset($_POST['opcao']) ? $_POST['opcao'] : '';
+
+        if ($respostaUsuario === 'RespostaCerta') {
+            echo 'Resposta correta!';
+
+            atualizarPontos($nome, $respostaUsuario);
+        } else {
+            echo 'Resposta errada. Tente novamente.';
+        }
+    }
       ?>
       <button type="submit">Verificar Resposta</button>
       </form>
       <?php
-      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-          $respostaUsuario = isset($_POST['opcao']) ? $_POST['opcao'] : '';
-
-          if ($respostaUsuario === 'RespostaCerta') {
-              echo 'Resposta correta!';
-          } else {
-              echo 'Resposta errada. Tente novamente.';
-          }
-      }
       ?>
     </div>
 
