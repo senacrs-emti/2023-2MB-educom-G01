@@ -1,6 +1,14 @@
 <?php
 include_once "_conexao.php";
 include_once "_functions.php";
+// Verifica se o parâmetro 'nome' está presente na URL
+if (isset($_GET['nome'])) {
+  $nome = $_GET['nome'];
+} else {
+  // Se o parâmetro 'nome' não estiver presente, redireciona para a página inicial
+  header("Location: ./_inicio.php");
+  exit();
+}
 
 ?>
 
@@ -53,14 +61,14 @@ include_once "_functions.php";
       $opcoes = array($questoes[0]['RespostaErrada2'], $questoes[0]['RespostaErrada'], $questoes[0]['RespostaCerta']);
       shuffle($opcoes);
     ?>
-      <form action="_index.php" method="post">
+    <form action="_index.php?nome=<?= $nome ?>" method="post">
       <?php foreach ($opcoes as $indice => $value) {
       $tipoResposta = array_search($value, $questoes[0]);
         // Marca o botão de opção correto
         $checked = ($tipoResposta === 'RespostaCerta') ? 'checked' : '';
     
         echo "<label for='opcao$indice'>$value</label>";
-        echo "<input type='radio' name='opcao' id='opcao$indice' value='$tipoResposta' $checked>";
+        echo "<input type='radio' name='opcao' id='opcao$indice' value='$tipoResposta' $checked> <br>";
       }
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $respostaUsuario = isset($_POST['opcao']) ? $_POST['opcao'] : '';
@@ -74,7 +82,7 @@ include_once "_functions.php";
         }
     }
       ?>
-      <button type="submit">Verificar Resposta</button>
+      <button>Verificar Resposta</button>
       </form>
       <?php
       ?>
