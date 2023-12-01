@@ -51,9 +51,9 @@ form{
 button {
     background-color: rgb(106, 163, 229);
     color: white;
-    box-shadow: 2px 2   px rgb(13, 68, 110);
     margin-top: 10px;
 }
 button:hover{
     background-color: rgb(29, 15, 221);
+    box-shadow: 2px 2   px rgb(13, 68, 110);    
     }
