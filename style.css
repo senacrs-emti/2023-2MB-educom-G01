@@ -4,7 +4,7 @@
 }
 body{
    
-    background-image: linear-gradient(rgb(105, 104, 104), rgb(62, 92, 161))
+    background-image: linear-gradient( rgb(255, 255, 255), rgb(10, 45, 187))
 }
 main{
     display: flex;
@@ -39,7 +39,7 @@ main{
     align-items: center;
     justify-content: center;
     box-shadow: 2px 5px 5px black;
-    background-image: linear-gradient(to bottom right, rgb(198, 37, 37), rgb(62, 92, 161));
+    background-image: linear-gradient(to bottom right, rgb(164, 226, 237), rgb(62, 92, 161));
 }
 .questao h1 {
     font-size: 20px;
@@ -68,10 +68,16 @@ li{
 .botao{
     width: 75px;
     height: 40px;
-    background-color: green;
+    background-color: rgb(106, 163, 229);
     color: white;
-    box-shadow: 1px 1px rgb(0, 0, 0);
+    box-shadow: 2px 2   px rgb(13, 68, 110);
+    border-radius: 20%;
+    
 
+}
+
+.botao:hover{
+    background-color: rgb(29, 15, 221);
 }
 #Enviar{
    justify-content: right;

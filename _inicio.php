@@ -5,61 +5,14 @@ include_once('_functions.php');
 ?>
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="inicio.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balanceador Quimico</title>
     <style>
-        body{
-            background-color: RGB(142, 209, 177);
-        }
-        #bloco-entrar{
-            display:flex;
-            align-items:center;
-            flex-direction:column;
-        }
-        form{
-            display:flex;
-            align-items:center;
-            flex-direction:column;
-            margin:5px;
-        }
-        #bloco-ranking{
-            display:flex;
-            align-items:center;
-            flex-direction:column;
-        }
-        #rank{
-            width:70%;
-            height:200px;
-            border: solid 1px black;
-        }
-        .linhas{
-            border: solid 1px black;
-            font-size:25px;
-        }
-        .cabecalho{
-            background-color: gray;
-        }
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background-color: white;
-            border: 2px solid black;
-            z-index: 1000;
-        }
-
-        #fechar-popup {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-        }
+ 
     </style>
 </head>
 <body>
