@@ -67,6 +67,7 @@ if (isset($_GET['nome'])) {
         <?php
 foreach ($opcoes as $indice => $value) {
   $tipoResposta = array_search($value,$questoes[0]);
+  echo $tipoResposta
     ?>
     <div class="form-check">
         <input class="form-check-input" type="radio" name="opcao" id="flexRadioDefault<?php echo $indice + 1; ?>" value="<?php echo $indice; ?>" data-resposta="<?php echo ($tipoResposta === 'RespostaCerta') ? 'certo' : 'errado'; ?>">
@@ -75,32 +76,20 @@ foreach ($opcoes as $indice => $value) {
         </label>
     </div>
     <?php
-}
-// Verifique se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Verifica se o campo 'opcao' está definido no array $_POST
-  if (isset($_POST['opcao'])) {
-      // Obtém o valor selecionado
-      $opcaoSelecionada = $_POST['opcao'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $respostaSelecionada = $_POST['opcao']; // Obtém a opção selecionada pelo usuário
 
-      // Obtém a resposta correta associada à opção selecionada
-      $respostaCorreta = 'RespostaCerta';
-      $respostaCorretaValor = array_search($respostaCorreta, $opcoes);
+      // Verifica se a resposta selecionada está correta ou não
+      $respostaCorreta = $opcoes[$respostaSelecionada];
+      $tipoResposta = array_search($respostaCorreta, $questoes[0]);
 
-      // Verifica se a opção selecionada é a resposta correta
-      if ($opcaoSelecionada == $respostaCorretaValor) {
-          echo "Parabéns! Você acertou!";
-          atualizarPontos($nome, $respostaCorreta);
+      if ($tipoResposta === 'RespostaCerta') {
+          echo "Resposta certa!";
       } else {
-          echo "Ops! Você errou.";
-          header("Location: ./_inicio.php");
-          exit(); // Certifique-se de sair após o redirecionamento para evitar execução adicional
+          header("Location: _inicio.php"); // Redireciona para _inicio.php se a resposta estiver errada
+          exit();
       }
-  } else {
-      echo "Nenhuma opção selecionada";
   }
-} else {
-  echo "O formulário não foi submetido";
 }
 ?> 
     </div>
