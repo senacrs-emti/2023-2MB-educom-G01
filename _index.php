@@ -79,6 +79,8 @@ if (isset($_GET['nome'])) {
             atualizarPontos($nome, $respostaUsuario);
         } else {
             echo 'Resposta errada. Tente novamente.';
+            header("Location: ./derrota.php");
+            exit();
         }
     }
       ?>
